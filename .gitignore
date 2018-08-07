@@ -1,4 +1,5 @@
-_site/
-.sass-cache/
-.jekyll-cache/
-.jekyll-metadata
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
