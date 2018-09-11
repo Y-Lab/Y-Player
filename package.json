@@ -18,8 +18,8 @@
   "files": [
     "dist"
   ],
-  "main": "dist/player.min.js",
-  "style": "dist/player.min.css",
+  "main": "dist/yplayer.min.js",
+  "style": "dist/yplayer.min.css",
   "repository": {
     "type" : "git",
     "url": "https://github.com/Y-Lab/Y-Player.git"
