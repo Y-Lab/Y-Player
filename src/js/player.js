@@ -6,12 +6,12 @@ import i18n from './i18n';
 import Template from './template';
 import Icons from './icons';
 import Events from './events';
-import FullScreen from './fullscreen';
 import Bar from './bar';
-import Timer from './timer';
 import Bezel from './bezel';
+import FullScreen from './fullscreen';
 import Controller from './controller';
 import Setting from './setting';
+import Timer from './timer';
 import HotKey from './hotkey';
 import ContextMenu from './contextmenu';
 import InfoPanel from './info-panel';
@@ -336,10 +336,6 @@ class YPlayer {
                     else {
                         this.notice('Error: Can\'t find Webtorrent.');
                     }
-                    break;
-
-                default:
-                    this.notice('Error: Illegal video type.')
                     break;
             }
         }

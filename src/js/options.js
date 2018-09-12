@@ -1,17 +1,13 @@
-import defaultApiBackend from './api.js';
-
 export default (options) => {
     // default options
     const defaultOption = {
         container: options.element || document.getElementsByClassName('y-player')[0],
-        live: false,
         autoplay: false,
         theme: '#b7daff',
         lang: (navigator.language || navigator.browserLanguage).toLowerCase(),
         hotkey: true,
         preload: 'metadata',
         volume: 0.5,
-        apiBackend: defaultApiBackend,
         video: {},
         contextmenu: [],
         mutex: true

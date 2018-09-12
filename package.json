@@ -15,7 +15,7 @@
   "license": "MIT",
   "author": {
     "name": "Y-Lab",
-    "email" : "dev@y-english.org",
+    "email": "dev@y-english.org",
     "url": "https://lab.y-english.org"
   },
   "files": [
@@ -57,7 +57,6 @@
     "webpack-dev-server": "^3.1.8"
   },
   "dependencies": {
-    "axios": "^0.18.0",
     "balloon-css": "^0.5.0",
     "mini-css-extract-plugin": "^0.4.2",
     "promise-polyfill": "^8.1.0",

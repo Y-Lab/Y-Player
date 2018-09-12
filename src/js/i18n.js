@@ -1,13 +1,3 @@
-/*
-W3C def language codes is:
-    language-code = primary-code ( "-" subcode )
-        primary-code    ISO 639-1   ( the names of language with 2 code )
-        subcode         ISO 3166    ( the names of countries )
-
-NOTE: use lowercase to prevent case typo from user!
-Use this as shown below.....
-*/
-
 function i18n (lang) {
     this.lang = lang;
     this.tran = (text) => {
@@ -40,7 +30,6 @@ const tranTxt = {
         'Setting': '设置',
         'Full screen': '全屏',
         'Web full screen': '页面全屏',
-        'Send': '发送',
         's': '秒',
         'Volume': '音量',
         'Video info': '视频统计信息',
