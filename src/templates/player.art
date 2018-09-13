@@ -41,7 +41,7 @@
             </div>
         </div>{{ /if }}
         <div class="y-player-speed">
-            <button class="y-player-icon y-player-speed-icon">1&times;</button>
+            <button class="y-player-icon y-player-speed-icon" data-balloon="{{ tran('Speed') }}" data-balloon-pos="up">1&times;</button>
             <div class="y-player-speed-mask">
                 <div class="y-player-speed-list">
                     {{ each options.speed }}<div class="y-player-speed-item" data-speed="{{ $value }}">{{ $value }}&times;</div>{{ /each }}
@@ -69,7 +69,7 @@
     </div>
 </div>
 <div class="y-player-info-panel y-player-info-panel-hide">
-    <div class="y-player-info-panel-close">[x]</div>
+    <div class="y-player-info-panel-close">[&times;]</div>
     <div class="y-player-info-panel-item y-player-info-panel-item-version">
         <span class="y-player-info-panel-item-title">Player version</span>
         <span class="y-player-info-panel-item-data"></span>
