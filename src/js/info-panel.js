@@ -1,4 +1,6 @@
-class y-nfoPanel {
+/* global Y_PLAYER_VERSION GIT_HASH */
+
+class InfoPanel {
     constructor (player) {
         this.container = player.template.infoPanel;
         this.template = player.template;

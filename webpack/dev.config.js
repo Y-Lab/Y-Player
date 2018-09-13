@@ -1,4 +1,5 @@
 /* eslint-disable no-undef */
+
 const path = require('path');
 const webpack = require('webpack');
 const GitRevisionPlugin = require('git-revision-webpack-plugin');
@@ -8,7 +9,7 @@ module.exports = {
     mode: 'development',
     devtool: 'cheap-module-source-map',
     entry: {
-        'YPlayer': './src/js/index.js'
+        'y-player': './src/js/index.js'
     },
     output: {
         path: path.resolve(__dirname, '..', 'dist'),

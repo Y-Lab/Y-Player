@@ -21,8 +21,8 @@
   "files": [
     "dist"
   ],
-  "main": "dist/yplayer.min.js",
-  "style": "dist/yplayer.min.css",
+  "main": "dist/y-player.min.js",
+  "style": "dist/y-player.min.css",
   "repository": {
     "type": "git",
     "url": "https://github.com/Y-Lab/Y-Player.git"
@@ -38,7 +38,7 @@
     "art-template-loader": "^1.4.3",
     "autoprefixer": "^9.1.5",
     "babel-core": "^6.26.3",
-    "babel-loader": "^8.0.2",
+    "babel-loader": "7",
     "babel-preset-env": "^1.7.0",
     "cross-env": "^5.2.0",
     "css-loader": "^1.0.0",
@@ -52,6 +52,7 @@
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.0",
     "svg-inline-loader": "^0.8.0",
+    "template-string-optimize-loader": "^3.0.0",
     "url-loader": "^1.1.1",
     "webpack": "^4.18.0",
     "webpack-dev-server": "^3.1.8"

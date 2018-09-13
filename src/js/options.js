@@ -1,3 +1,5 @@
+/* global Y_PLAYER_VERSION */
+
 export default (options) => {
     // default options
     const defaultOption = {

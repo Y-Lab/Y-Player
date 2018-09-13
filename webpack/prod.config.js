@@ -1,4 +1,5 @@
 /* eslint-disable no-undef */
+
 const path = require('path');
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -10,7 +11,7 @@ module.exports = {
     bail: true,
     devtool: 'source-map',
     entry: {
-        'YPlayer': './src/js/index.js'
+        'y-player': './src/js/index.js'
     },
     output: {
         path: path.resolve(__dirname, '..', 'dist'),

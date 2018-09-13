@@ -21,6 +21,7 @@ let index = 0;
 const instances = [];
 
 class YPlayer {
+
     /**
      * Y-Player constructor function
      *
@@ -266,77 +267,77 @@ class YPlayer {
             }
 
             switch (this.type) {
-                // https://github.com/video-dev/hls.js
-                case 'hls':
-                    if (Hls) {
-                        if (Hls.isSupported()) {
-                            const hls = new Hls();
-                            hls.loadSource(video.src);
-                            hls.attachMedia(video);
-                        }
-                        else {
-                            this.notice('Error: Hls is not supported.');
-                        }
+            // https://github.com/video-dev/hls.js
+            case 'hls':
+                if (Hls) {
+                    if (Hls.isSupported()) {
+                        const hls = new Hls();
+                        hls.loadSource(video.src);
+                        hls.attachMedia(video);
                     }
                     else {
-                        this.notice('Error: Can\'t find Hls.');
+                        this.notice('Error: Hls is not supported.');
                     }
-                    break;
+                }
+                else {
+                    this.notice('Error: Can\'t find Hls.');
+                }
+                break;
 
-                // https://github.com/Bilibili/flv.js
-                case 'flv':
-                    if (flvjs && flvjs.isSupported()) {
-                        if (flvjs.isSupported()) {
-                            const flvPlayer = flvjs.createPlayer({
-                                type: 'flv',
-                                url: video.src
+            // https://github.com/Bilibili/flv.js
+            case 'flv':
+                if (flvjs && flvjs.isSupported()) {
+                    if (flvjs.isSupported()) {
+                        const flvPlayer = flvjs.createPlayer({
+                            type: 'flv',
+                            url: video.src
+                        });
+                        flvPlayer.attachMediaElement(video);
+                        flvPlayer.load();
+                    }
+                    else {
+                        this.notice('Error: flvjs is not supported.');
+                    }
+                }
+                else {
+                    this.notice('Error: Can\'t find flvjs.');
+                }
+                break;
+
+            // https://github.com/Dash-Industry-Forum/dash.js
+            case 'dash':
+                if (dashjs) {
+                    dashjs.MediaPlayer().create().initialize(video, video.src, false);
+                }
+                else {
+                    this.notice('Error: Can\'t find dashjs.');
+                }
+                break;
+
+            // https://github.com/webtorrent/webtorrent
+            case 'webtorrent':
+                if (WebTorrent) {
+                    if (WebTorrent.WEBRTC_SUPPORT) {
+                        this.container.classList.add('y-player-loading');
+                        const client = new WebTorrent();
+                        const torrentId = video.src;
+                        client.add(torrentId, (torrent) => {
+                            const file = torrent.files.find((file) => file.name.endsWith('.mp4'));
+                            file.renderTo(this.video, {
+                                autoplay: this.options.autoplay
+                            }, () => {
+                                this.container.classList.remove('y-player-loading');
                             });
-                            flvPlayer.attachMediaElement(video);
-                            flvPlayer.load();
-                        }
-                        else {
-                            this.notice('Error: flvjs is not supported.');
-                        }
+                        });
                     }
                     else {
-                        this.notice('Error: Can\'t find flvjs.');
+                        this.notice('Error: Webtorrent is not supported.');
                     }
-                    break;
-
-                // https://github.com/Dash-Industry-Forum/dash.js
-                case 'dash':
-                    if (dashjs) {
-                        dashjs.MediaPlayer().create().initialize(video, video.src, false);
-                    }
-                    else {
-                        this.notice('Error: Can\'t find dashjs.');
-                    }
-                    break;
-
-                // https://github.com/webtorrent/webtorrent
-                case 'webtorrent':
-                    if (WebTorrent) {
-                        if (WebTorrent.WEBRTC_SUPPORT) {
-                            this.container.classList.add('y-player-loading');
-                            const client = new WebTorrent();
-                            const torrentId = video.src;
-                            client.add(torrentId, (torrent) => {
-                                const file = torrent.files.find((file) => file.name.endsWith('.mp4'));
-                                file.renderTo(this.video, {
-                                    autoplay: this.options.autoplay
-                                }, () => {
-                                    this.container.classList.remove('y-player-loading');
-                                });
-                            });
-                        }
-                        else {
-                            this.notice('Error: Webtorrent is not supported.');
-                        }
-                    }
-                    else {
-                        this.notice('Error: Can\'t find Webtorrent.');
-                    }
-                    break;
+                }
+                else {
+                    this.notice('Error: Can\'t find Webtorrent.');
+                }
+                break;
             }
         }
     }
@@ -365,7 +366,7 @@ class YPlayer {
         this.on('error', () => {
             if (!this.video.error) {
                 // Not a video load error, may be poster load failed, see https://github.com/MoePlayer/DPlayer/issues/307
-                return
+                return;
             }
             this.tran && this.notice && this.type !== 'webtorrent' & this.notice(this.tran('Video load failed'), -1);
         });

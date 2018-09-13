@@ -34,7 +34,7 @@ class FullScreen {
                 utils.setScrollPosition(this.lastScrollPosition);
                 this.player.events.trigger('fullscreen_cancel');
             }
-        }
+        };
         if (/Firefox/.test(navigator.userAgent)) {
             document.addEventListener('mozfullscreenchange', docfullscreenchange);
             document.addEventListener('fullscreenchange', docfullscreenchange);
@@ -97,31 +97,31 @@ class FullScreen {
 
     cancel (type = 'browser') {
         switch (type) {
-            case 'browser':
-                if (document.cancelFullScreen) {
-                    document.cancelFullScreen();
-                }
-                else if (document.mozCancelFullScreen) {
-                    document.mozCancelFullScreen();
-                }
-                else if (document.webkitCancelFullScreen) {
-                    document.webkitCancelFullScreen();
-                }
-                else if (document.webkitCancelFullscreen) {
-                    document.webkitCancelFullscreen();
-                }
-                else if (document.msCancelFullScreen) {
-                    document.msCancelFullScreen();
-                }
-                else if (document.msExitFullscreen) {
-                    document.msExitFullscreen();
-                }
-                break;
-            case 'web':
-                this.player.container.classList.remove('y-player-fulled');
-                document.body.classList.remove('y-player-web-fullscreen-fix');
-                this.player.events.trigger('webfullscreen_cancel');
-                break;
+        case 'browser':
+            if (document.cancelFullScreen) {
+                document.cancelFullScreen();
+            }
+            else if (document.mozCancelFullScreen) {
+                document.mozCancelFullScreen();
+            }
+            else if (document.webkitCancelFullScreen) {
+                document.webkitCancelFullScreen();
+            }
+            else if (document.webkitCancelFullscreen) {
+                document.webkitCancelFullscreen();
+            }
+            else if (document.msCancelFullScreen) {
+                document.msCancelFullScreen();
+            }
+            else if (document.msExitFullscreen) {
+                document.msExitFullscreen();
+            }
+            break;
+        case 'web':
+            this.player.container.classList.remove('y-player-fulled');
+            document.body.classList.remove('y-player-web-fullscreen-fix');
+            this.player.events.trigger('webfullscreen_cancel');
+            break;
         }
     }
 
