@@ -1,14 +1,13 @@
-import play from '../assets/play.svg';
-import pause from '../assets/pause.svg';
-import volumeUp from '../assets/volume-up.svg';
-import volumeDown from '../assets/volume-down.svg';
-import volumeOff from '../assets/volume-off.svg';
-import full from '../assets/full.svg';
-import fullWeb from '../assets/full-web.svg';
-import setting from '../assets/setting.svg';
-import right from '../assets/right.svg';
-import pallette from '../assets/pallette.svg';
-import loading from '../assets/loading.svg';
+import play from '../icons/play.svg';
+import pause from '../icons/pause.svg';
+import volumeUp from '../icons/volume-up.svg';
+import volumeDown from '../icons/volume-down.svg';
+import volumeOff from '../icons/volume-off.svg';
+import full from '../icons/full.svg';
+import fullWeb from '../icons/full-web.svg';
+import setting from '../icons/setting.svg';
+import right from '../icons/right.svg';
+import loading from '../icons/loading.svg';
 
 const Icons = {
     play: play,
@@ -20,7 +19,6 @@ const Icons = {
     fullWeb: fullWeb,
     setting: setting,
     right: right,
-    pallette: pallette,
     loading: loading,
 };
 
