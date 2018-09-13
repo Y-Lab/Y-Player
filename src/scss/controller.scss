@@ -159,7 +159,14 @@
                 padding: 8px;
             }
         }
-        .y-player-time,
+        .y-player-time {
+            line-height: 38px;
+            color: #eee;
+            text-shadow: 0 0 2px rgba(0, 0, 0, .5);
+            vertical-align: middle;
+            font-size: 13px;
+            cursor: default;
+        }
         .y-player-icon {
             width: 40px;
             height: 100%;

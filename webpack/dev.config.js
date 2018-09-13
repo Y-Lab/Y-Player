@@ -9,12 +9,12 @@ module.exports = {
     mode: 'development',
     devtool: 'cheap-module-source-map',
     entry: {
-        'player': './src/js/index.js'
+        player: './src/js/index.js'
     },
     output: {
         path: path.resolve(__dirname, '..', 'dist'),
         filename: '[name].js',
-        library: '[name]',
+        library: 'Player',
         libraryTarget: 'umd',
         libraryExport: 'default',
         umdNamedDefine: true,

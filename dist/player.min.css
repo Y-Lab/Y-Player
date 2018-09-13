@@ -896,7 +896,13 @@ button[data-balloon] {
       right: 20px; }
       .y-player-controller .y-player-icons.y-player-icons-right .y-player-icon {
         padding: 8px; }
-    .y-player-controller .y-player-icons .y-player-time,
+    .y-player-controller .y-player-icons .y-player-time {
+      line-height: 38px;
+      color: #eee;
+      text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+      vertical-align: middle;
+      font-size: 13px;
+      cursor: default; }
     .y-player-controller .y-player-icons .y-player-icon {
       width: 40px;
       height: 100%;
@@ -907,26 +913,20 @@ button[data-balloon] {
       vertical-align: middle;
       box-sizing: border-box;
       display: inline-block; }
-      .y-player-controller .y-player-icons .y-player-time .y-player-icon-content,
       .y-player-controller .y-player-icons .y-player-icon .y-player-icon-content {
         transition: all .2s ease-in-out;
         opacity: .8; }
-      .y-player-controller .y-player-icons .y-player-time:hover .y-player-icon-content,
       .y-player-controller .y-player-icons .y-player-icon:hover .y-player-icon-content {
         opacity: 1; }
-      .y-player-controller .y-player-icons .y-player-time.y-player-quality-icon,
       .y-player-controller .y-player-icons .y-player-icon.y-player-quality-icon {
         color: #fff;
         width: auto;
         line-height: 22px;
         font-size: 14px; }
-      .y-player-controller .y-player-icons .y-player-time.y-player-comment-icon,
       .y-player-controller .y-player-icons .y-player-icon.y-player-comment-icon {
         padding: 10px 9px 9px; }
-      .y-player-controller .y-player-icons .y-player-time.y-player-setting-icon,
       .y-player-controller .y-player-icons .y-player-icon.y-player-setting-icon {
         padding-top: 8.5px; }
-      .y-player-controller .y-player-icons .y-player-time.y-player-volume-icon,
       .y-player-controller .y-player-icons .y-player-icon.y-player-volume-icon {
         width: 43px; }
     .y-player-controller .y-player-icons .y-player-volume {

@@ -6,6 +6,7 @@ import i18n from './i18n';
 import Template from './template';
 import Icons from './icons';
 import Events from './events';
+import User from './user';
 import Bar from './bar';
 import Bezel from './bezel';
 import FullScreen from './fullscreen';
@@ -37,6 +38,7 @@ class Player {
         }
         this.tran = new i18n(this.options.lang).tran;
         this.events = new Events();
+        this.user = new User(this);
         this.container = this.options.container;
 
         this.container.classList.add('y-player');
@@ -86,7 +88,7 @@ class Player {
 
         this.infoPanel = new InfoPanel(this);
 
-        if (!this.danmaku && this.options.autoplay) {
+        if (this.options.autoplay) {
             this.play();
         }
 
@@ -110,10 +112,6 @@ class Player {
         }
 
         this.video.currentTime = time;
-
-        if (this.danmaku) {
-            this.danmaku.seek();
-        }
 
         this.bar.set('played', time / this.video.duration, 'width');
         this.template.ptime.innerHTML = utils.secondToTime(time);

@@ -5,7 +5,10 @@ export default (options) => {
     const defaultOption = {
         container: options.element || document.getElementsByClassName('y-player')[0],
         autoplay: false,
-        theme: '#b7daff',
+        theme: {
+            bar: '#F00',
+            volume: '#FFF',
+        },
         lang: (navigator.language || navigator.browserLanguage).toLowerCase(),
         hotkey: true,
         preload: 'metadata',
@@ -35,7 +38,7 @@ export default (options) => {
         {
             text: 'Video info',
             click: (player) => {
-                player.infoPanel.triggle();
+                player.infoPanel.trigger();
             }
         },
         {

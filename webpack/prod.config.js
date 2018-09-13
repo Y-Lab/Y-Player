@@ -11,12 +11,12 @@ module.exports = {
     bail: true,
     devtool: 'source-map',
     entry: {
-        'player': './src/js/index.js'
+        player: './src/js/index.js'
     },
     output: {
         path: path.resolve(__dirname, '..', 'dist'),
         filename: '[name].min.js',
-        library: '[name]',
+        library: 'Player',
         libraryTarget: 'umd',
         libraryExport: 'default',
         umdNamedDefine: true,
