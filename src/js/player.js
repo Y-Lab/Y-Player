@@ -20,7 +20,7 @@ import tplVideo from '../templates/video.art';
 let index = 0;
 const instances = [];
 
-class YPlayer {
+class Player {
 
     /**
      * Y-Player constructor function
@@ -495,4 +495,4 @@ class YPlayer {
     }
 }
 
-export default YPlayer;
+export default Player;
