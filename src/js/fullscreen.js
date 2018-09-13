@@ -51,7 +51,7 @@ class FullScreen {
         case 'browser':
             return document.fullscreenElement || document.mozFullScreenElement || document.webkitFullscreenElement || document.msFullscreenElement;
         case 'web':
-            return this.player.container.classList.contains('y-player-fullscreened');
+            return this.player.container.classList.contains('y-player-fulled');
         }
     }
 
@@ -84,7 +84,7 @@ class FullScreen {
             }
             break;
         case 'web':
-            this.player.container.classList.add('y-player-fullscreened');
+            this.player.container.classList.add('y-player-fulled');
             document.body.classList.add('y-player-web-fullscreen-fix');
             this.player.events.trigger('webfullscreen');
             break;
@@ -118,7 +118,7 @@ class FullScreen {
                 }
                 break;
             case 'web':
-                this.player.container.classList.remove('y-player-fullscreened');
+                this.player.container.classList.remove('y-player-fulled');
                 document.body.classList.remove('y-player-web-fullscreen-fix');
                 this.player.events.trigger('webfullscreen_cancel');
                 break;

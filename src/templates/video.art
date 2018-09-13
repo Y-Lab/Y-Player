@@ -1,9 +1,1 @@
-<video
-    class="dplayer-video {{ if current }}dplayer-video-current{{ /if }}"
-    webkit-playsinline
-    playsinline
-    {{ if pic }}poster="{{ pic }}"{{ /if }}
-    {{ if preload }}preload="{{ preload }}"{{ /if }}
-    {{ if url }}src="{{ url }}"{{ /if }}
-    >
-</video>
+<video class="y-player-video{{ if current }} y-player-video-current{{ /if }}" webkit-playsinline playsinline{{ if pic }} poster="{{ pic }}"{{ /if }}{{ if preload }} preload="{{ preload }}"{{ /if }}{{ if url }} src="{{ url }}"{{ /if }}></video>
