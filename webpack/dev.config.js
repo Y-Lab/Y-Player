@@ -5,15 +5,11 @@ const GitRevisionPlugin = require('git-revision-webpack-plugin');
 const gitRevisionPlugin = new GitRevisionPlugin();
 
 module.exports = {
-
     mode: 'development',
-
     devtool: 'cheap-module-source-map',
-
     entry: {
         'YPlayer': './src/js/index.js'
     },
-
     output: {
         path: path.resolve(__dirname, '..', 'dist'),
         filename: '[name].js',
@@ -23,12 +19,10 @@ module.exports = {
         umdNamedDefine: true,
         publicPath: '/'
     },
-
     resolve: {
         modules: ['node_modules'],
         extensions: ['.js', '.scss']
     },
-
     module: {
         strictExportPresence: true,
         rules: [
@@ -88,7 +82,6 @@ module.exports = {
             }
         ]
     },
-
     devServer: {
         compress: true,
         contentBase: path.resolve(__dirname, '..', 'demo'),
@@ -102,23 +95,19 @@ module.exports = {
             ignored: /node_modules/
         }
     },
-
     plugins: [
         new webpack.DefinePlugin({
-            DPLAYER_VERSION: `"${require('../package.json').version}"`,
+            Y_PLAYER_VERSION: `"${require('../package.json').version}"`,
             GIT_HASH: JSON.stringify(gitRevisionPlugin.version())
         })
     ],
-
     node: {
         dgram: 'empty',
         fs: 'empty',
         net: 'empty',
         tls: 'empty'
     },
-
     performance: {
         hints: false
     }
-
 };

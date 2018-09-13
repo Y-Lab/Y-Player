@@ -1,4 +1,4 @@
-import '../css/index.scss';
+import '../scss/index.scss';
 import YPlayer from './player';
 
 /* global Y_PLAYER_VERSION GIT_HASH */

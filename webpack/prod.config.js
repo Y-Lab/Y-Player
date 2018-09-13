@@ -6,17 +6,12 @@ const GitRevisionPlugin = require('git-revision-webpack-plugin');
 const gitRevisionPlugin = new GitRevisionPlugin();
 
 module.exports = {
-
     mode: 'production',
-
     bail: true,
-
     devtool: 'source-map',
-
     entry: {
         'YPlayer': './src/js/index.js'
     },
-
     output: {
         path: path.resolve(__dirname, '..', 'dist'),
         filename: '[name].min.js',
@@ -26,12 +21,10 @@ module.exports = {
         umdNamedDefine: true,
         publicPath: '/'
     },
-
     resolve: {
         modules: ['node_modules'],
         extensions: ['.js', '.scss']
     },
-
     module: {
         strictExportPresence: true,
         rules: [
@@ -94,22 +87,19 @@ module.exports = {
             }
         ]
     },
-
     plugins: [
         new webpack.DefinePlugin({
-            DPLAYER_VERSION: `"${require('../package.json').version}"`,
+            Y_PLAYER_VERSION: `"${require('../package.json').version}"`,
             GIT_HASH: JSON.stringify(gitRevisionPlugin.version())
         }),
         new MiniCssExtractPlugin({
             filename: '[name].min.css'
         })
     ],
-
     node: {
         dgram: 'empty',
         fs: 'empty',
         net: 'empty',
         tls: 'empty',
     }
-
 };
