@@ -73,7 +73,8 @@ class FullScreen {
             else if (this.player.container.webkitRequestFullscreen) {
                 this.player.container.webkitRequestFullscreen();
             }
-            else if (this.player.video.webkitEnterFullscreen) { // Safari for iOS
+            else if (this.player.video.webkitEnterFullscreen) {
+                // Safari for iOS
                 this.player.video.webkitEnterFullscreen();
             }
             else if (this.player.video.webkitEnterFullScreen) {

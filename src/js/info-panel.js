@@ -1,5 +1,3 @@
-/* global Y_PLAYER_VERSION GIT_HASH */
-
 class InfoPanel {
     constructor (player) {
         this.container = player.template.infoPanel;
@@ -36,6 +34,7 @@ class InfoPanel {
     }
 
     update () {
+        /* global Y_PLAYER_VERSION GIT_HASH */
         this.template.infoVersion.innerHTML = `v${Y_PLAYER_VERSION} ${GIT_HASH}`;
         this.template.infoType.innerHTML = this.player.type;
         this.template.infoUrl.innerHTML = this.player.options.video.url;

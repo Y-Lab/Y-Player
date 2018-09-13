@@ -10,7 +10,7 @@ class Bar {
      * Update progress
      * @param {String} type - Point out which bar it is
      * @param {Number} percentage
-     * @param {String} direction - Point out the direction of this bar, Should be height or width
+     * @param {String} direction - Point out the direction of this bar, should be height or width
      */
     set (type, percentage, direction) {
         percentage = Math.max(percentage, 0);

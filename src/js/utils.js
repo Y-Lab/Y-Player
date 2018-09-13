@@ -3,11 +3,11 @@ const isMobile = /mobile/i.test(window.navigator.userAgent);
 const utils = {
 
     /**
-    * Parse second to time string
-    *
-    * @param {Number} second
-    * @return {String} 00:00 or 00:00:00
-    */
+     * Parse second to time string
+     *
+     * @param {Number} second
+     * @return {String} 00:00 or 00:00:00
+     */
     secondToTime: (second) => {
         const add0 = (num) => num < 10 ? '0' + num : '' + num;
         const hour = Math.floor(second / 3600);
@@ -40,12 +40,12 @@ const utils = {
     },
 
     /**
-    * optimize control play progress
-    * optimize get element's view position,for float dialog video player
-    * getBoundingClientRect 在 IE8 及以下返回的值缺失 width、height 值
-    * getBoundingClientRect 在 Firefox 11 及以下返回的值会把 transform 的值也包含进去
-    * getBoundingClientRect 在 Opera 10.5 及以下返回的值缺失 width、height 值
-    */
+     * optimize control play progress
+     * optimize get element's view position,for float dialog video player
+     * getBoundingClientRect 在 IE8 及以下返回的值缺失 width、height 值
+     * getBoundingClientRect 在 Firefox 11 及以下返回的值会把 transform 的值也包含进去
+     * getBoundingClientRect 在 Opera 10.5 及以下返回的值缺失 width、height 值
+     */
     getBoundingClientRectViewLeft (element) {
         const scrollTop = document.documentElement.scrollTop;
 
