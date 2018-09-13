@@ -11,7 +11,7 @@ module.exports = {
     bail: true,
     devtool: 'source-map',
     entry: {
-        'y-player': './src/js/index.js'
+        'player': './src/js/index.js'
     },
     output: {
         path: path.resolve(__dirname, '..', 'dist'),

@@ -9,7 +9,7 @@ module.exports = {
     mode: 'development',
     devtool: 'cheap-module-source-map',
     entry: {
-        'y-player': './src/js/index.js'
+        'player': './src/js/index.js'
     },
     output: {
         path: path.resolve(__dirname, '..', 'dist'),
