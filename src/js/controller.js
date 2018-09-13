@@ -26,6 +26,7 @@ class Controller {
         this.initThumbnails();
         this.initPlayedBar();
         this.initFullButton();
+        this.initSpeedButton();
         this.initQualityButton();
         this.initHighlights();
         if (!utils.isMobile) {
@@ -209,6 +210,14 @@ class Controller {
         });
     }
 
+    initSpeedButton () {
+        this.player.template.speedList.addEventListener('click', (e) => {
+            if (e.target.classList.contains('y-player-speed-item')) {
+                this.player.speed(e.target.dataset.speed);
+            }
+        });
+    }
+
     initQualityButton () {
         if (this.player.options.video.quality) {
             this.player.template.qualityList.addEventListener('click', (e) => {
@@ -235,8 +244,6 @@ class Controller {
 
     hide () {
         this.player.container.classList.add('y-player-hide-controller');
-        this.player.setting.hide();
-        this.player.comment && this.player.comment.hide();
     }
 
     isShow () {

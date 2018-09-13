@@ -8,7 +8,6 @@ $('#copyright-year').text(function () {
 // player
 const player = new Player({
     container: document.getElementById('player'),
-    screenshot: true,
     video: {
         url: 'demo.mp4'
     }

@@ -1,11 +1,9 @@
 <div class="y-player-mask"></div>
 <div class="y-player-video-wrap">
     {{ include './video.art' video }}
-    {{ if options.logo }}
-    <div class="y-player-logo">
+    {{ if options.logo }}<div class="y-player-logo">
         <img src="{{ options.logo }}">
-    </div>
-    {{ /if }}
+    </div>{{ /if }}
     <div class="y-player-bezel">
         <span class="y-player-bezel-icon"></span>
         <span class="y-player-loading-icon">{{@ icons.loading }}</span>
@@ -34,48 +32,19 @@
         </span>
     </div>
     <div class="y-player-icons y-player-icons-right">
-        {{ if options.video.quality }}
-        <div class="y-player-quality">
+        {{ if options.video.quality }}<div class="y-player-quality">
             <button class="y-player-icon y-player-quality-icon">{{ options.video.quality[options.video.defaultQuality].name }}</button>
             <div class="y-player-quality-mask">
                 <div class="y-player-quality-list">
-                {{ each options.video.quality }}
-                    <div class="y-player-quality-item" data-index="{{ $index }}">{{ $value.name }}</div>
-                {{ /each }}
+                    {{ each options.video.quality }}<div class="y-player-quality-item" data-index="{{ $index }}">{{ $value.name }}</div>{{ /each }}
                 </div>
             </div>
-        </div>
-        {{ /if }}
-        <div class="y-player-setting">
-            <button class="y-player-icon y-player-setting-icon" data-balloon="{{ tran('Setting') }}" data-balloon-pos="up">
-                <span class="y-player-icon-content">{{@ icons.setting }}</span>
-            </button>
-            <div class="y-player-setting-box">
-                <div class="y-player-setting-origin-panel">
-                    <div class="y-player-setting-item y-player-setting-speed">
-                        <span class="y-player-label">{{ tran('Speed') }}</span>
-                        <div class="y-player-toggle">{{@ icons.right }}</div>
-                    </div>
-                </div>
-                <div class="y-player-setting-speed-panel">
-                    <div class="y-player-setting-speed-item" data-speed="0.5">
-                        <span class="y-player-label">0.5</span>
-                    </div>
-                    <div class="y-player-setting-speed-item" data-speed="0.75">
-                        <span class="y-player-label">0.75</span>
-                    </div>
-                    <div class="y-player-setting-speed-item" data-speed="1">
-                        <span class="y-player-label">{{ tran('Normal') }}</span>
-                    </div>
-                    <div class="y-player-setting-speed-item" data-speed="1.25">
-                        <span class="y-player-label">1.25</span>
-                    </div>
-                    <div class="y-player-setting-speed-item" data-speed="1.5">
-                        <span class="y-player-label">1.5</span>
-                    </div>
-                    <div class="y-player-setting-speed-item" data-speed="2">
-                        <span class="y-player-label">2</span>
-                    </div>
+        </div>{{ /if }}
+        <div class="y-player-speed">
+            <button class="y-player-icon y-player-speed-icon">1&times;</button>
+            <div class="y-player-speed-mask">
+                <div class="y-player-speed-list">
+                    {{ each options.speed }}<div class="y-player-speed-item" data-speed="{{ $value }}">{{ $value }}&times;</div>{{ /each }}
                 </div>
             </div>
         </div>
@@ -127,10 +96,6 @@
     </div>
 </div>
 <div class="y-player-menu">
-    {{ each options.contextmenu }}
-        <div class="y-player-menu-item">
-            <a{{ if $value.link }} target="_blank"{{ /if }} href="{{ $value.link || 'javascript:void(0);' }}">{{ tran($value.text) }}</a>
-        </div>
-    {{ /each }}
+    {{ each options.contextmenu }}<div class="y-player-menu-item"><a{{ if $value.link }} target="_blank"{{ /if }} href="{{ $value.link || 'javascript:void(0);' }}">{{ tran($value.text) }}</a></div>{{ /each }}
 </div>
 <div class="y-player-notice"></div>

@@ -11,7 +11,6 @@ import Bar from './bar';
 import Bezel from './bezel';
 import FullScreen from './fullscreen';
 import Controller from './controller';
-import Setting from './setting';
 import Timer from './timer';
 import HotKey from './hotkey';
 import ContextMenu from './contextmenu';
@@ -66,8 +65,6 @@ class Player {
         this.fullScreen = new FullScreen(this);
 
         this.controller = new Controller(this);
-
-        this.setting = new Setting(this);
 
         document.addEventListener('click', () => {
             this.focus = false;
@@ -363,7 +360,7 @@ class Player {
         // video download error: an error occurs
         this.on('error', () => {
             if (!this.video.error) {
-                // Not a video load error, may be poster load failed, see https://github.com/MoePlayer/DPlayer/issues/307
+                // Not a video load error, may be caused by poster loading failure, see https://github.com/MoePlayer/DPlayer/issues/307
                 return;
             }
             this.tran && this.notice && this.type !== 'webtorrent' & this.notice(this.tran('Video load failed'), -1);
@@ -420,10 +417,8 @@ class Player {
         const videoHTML = tplVideo({
             current: false,
             pic: null,
-            screenshot: this.options.screenshot,
             preload: 'auto',
             url: this.quality.url,
-            subtitle: this.options.subtitle
         });
         const videoEle = new DOMParser().parseFromString(videoHTML, 'text/html').body.firstChild;
         this.template.videoWrap.insertBefore(videoEle, this.template.videoWrap.getElementsByTagName('div')[0]);

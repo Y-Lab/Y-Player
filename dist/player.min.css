@@ -923,10 +923,11 @@ button[data-balloon] {
         width: auto;
         line-height: 22px;
         font-size: 14px; }
-      .y-player-controller .y-player-icons .y-player-icon.y-player-comment-icon {
-        padding: 10px 9px 9px; }
-      .y-player-controller .y-player-icons .y-player-icon.y-player-setting-icon {
-        padding-top: 8.5px; }
+      .y-player-controller .y-player-icons .y-player-icon.y-player-speed-icon {
+        color: #fff;
+        width: auto;
+        line-height: 22px;
+        font-size: 14px; }
       .y-player-controller .y-player-icons .y-player-icon.y-player-volume-icon {
         width: 43px; }
     .y-player-controller .y-player-icons .y-player-volume {
@@ -976,47 +977,6 @@ button[data-balloon] {
               transition: all .3s ease-in-out;
               -webkit-transform: scale(0);
                       transform: scale(0); }
-    .y-player-controller .y-player-icons .y-player-setting {
-      display: inline-block;
-      height: 100%; }
-      .y-player-controller .y-player-icons .y-player-setting .y-player-setting-box {
-        position: absolute;
-        right: 0;
-        bottom: 50px;
-        -webkit-transform: scale(0);
-                transform: scale(0);
-        width: 150px;
-        border-radius: 2px;
-        background: rgba(28, 28, 28, 0.9);
-        padding: 7px 0;
-        transition: all .3s ease-in-out;
-        overflow: hidden;
-        z-index: 2; }
-        .y-player-controller .y-player-icons .y-player-setting .y-player-setting-box > div {
-          display: none; }
-          .y-player-controller .y-player-icons .y-player-setting .y-player-setting-box > div.y-player-setting-origin-panel {
-            display: block; }
-        .y-player-controller .y-player-icons .y-player-setting .y-player-setting-box.y-player-setting-box-open {
-          -webkit-transform: scale(1);
-                  transform: scale(1); }
-        .y-player-controller .y-player-icons .y-player-setting .y-player-setting-box.y-player-setting-box-narrow {
-          width: 70px;
-          height: 180px;
-          text-align: center; }
-        .y-player-controller .y-player-icons .y-player-setting .y-player-setting-box.y-player-setting-box-speed .y-player-setting-origin-panel {
-          display: none; }
-        .y-player-controller .y-player-icons .y-player-setting .y-player-setting-box.y-player-setting-box-speed .y-player-setting-speed-panel {
-          display: block; }
-      .y-player-controller .y-player-icons .y-player-setting .y-player-setting-item,
-      .y-player-controller .y-player-icons .y-player-setting .y-player-setting-speed-item {
-        height: 30px;
-        padding: 5px 10px;
-        box-sizing: border-box;
-        cursor: pointer;
-        position: relative; }
-        .y-player-controller .y-player-icons .y-player-setting .y-player-setting-item:hover,
-        .y-player-controller .y-player-icons .y-player-setting .y-player-setting-speed-item:hover {
-          background-color: rgba(255, 255, 255, 0.1); }
     .y-player-controller .y-player-icons .y-player-full {
       display: inline-block;
       height: 100%;
@@ -1061,6 +1021,40 @@ button[data-balloon] {
         cursor: pointer;
         line-height: 25px; }
         .y-player-controller .y-player-icons .y-player-quality .y-player-quality-item:hover {
+          background-color: rgba(255, 255, 255, 0.1); }
+    .y-player-controller .y-player-icons .y-player-speed {
+      position: relative;
+      display: inline-block;
+      height: 100%;
+      z-index: 2; }
+      .y-player-controller .y-player-icons .y-player-speed:hover .y-player-speed-list {
+        display: block; }
+      .y-player-controller .y-player-icons .y-player-speed:hover .y-player-speed-mask {
+        display: block; }
+      .y-player-controller .y-player-icons .y-player-speed .y-player-speed-mask {
+        display: none;
+        position: absolute;
+        bottom: 38px;
+        left: -18px;
+        width: 80px;
+        padding-bottom: 12px; }
+      .y-player-controller .y-player-icons .y-player-speed .y-player-speed-list {
+        display: none;
+        font-size: 12px;
+        width: 80px;
+        border-radius: 2px;
+        background: rgba(28, 28, 28, 0.9);
+        padding: 5px 0;
+        transition: all .3s ease-in-out;
+        overflow: hidden;
+        color: #fff;
+        text-align: center; }
+      .y-player-controller .y-player-icons .y-player-speed .y-player-speed-item {
+        height: 25px;
+        box-sizing: border-box;
+        cursor: pointer;
+        line-height: 25px; }
+        .y-player-controller .y-player-icons .y-player-speed .y-player-speed-item:hover {
           background-color: rgba(255, 255, 255, 0.1); }
     .y-player-controller .y-player-icons .y-player-label {
       color: #eee;
