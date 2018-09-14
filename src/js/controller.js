@@ -23,15 +23,15 @@ class Controller {
         }
 
         this.initPlayButton();
+        this.initHighlights();
         this.initThumbnails();
         this.initPlayedBar();
-        this.initFullButton();
-        this.initSpeedButton();
-        this.initQualityButton();
-        this.initHighlights();
         if (!utils.isMobile) {
             this.initVolumeButton();
         }
+        this.initQualityButton();
+        this.initSpeedButton();
+        this.initFullScreenButton();
     }
 
     initPlayButton () {
@@ -162,16 +162,6 @@ class Controller {
         }
     }
 
-    initFullButton () {
-        this.player.template.browserFullButton.addEventListener('click', () => {
-            this.player.fullScreen.toggle('browser');
-        });
-
-        this.player.template.webFullButton.addEventListener('click', () => {
-            this.player.fullScreen.toggle('web');
-        });
-    }
-
     initVolumeButton () {
         const vWidth = 35;
 
@@ -210,14 +200,6 @@ class Controller {
         });
     }
 
-    initSpeedButton () {
-        this.player.template.speedList.addEventListener('click', (e) => {
-            if (e.target.classList.contains('y-player-speed-item')) {
-                this.player.speed(e.target.dataset.speed);
-            }
-        });
-    }
-
     initQualityButton () {
         if (this.player.options.video.quality) {
             this.player.template.qualityList.addEventListener('click', (e) => {
@@ -226,6 +208,30 @@ class Controller {
                 }
             });
         }
+    }
+
+    initSpeedButton () {
+        this.player.template.speedList.addEventListener('click', (e) => {
+            if (e.target.classList.contains('y-player-speed-item')) {
+                this.player.speed(e.target.dataset.speed);
+            }
+        });
+    }
+
+    initFullScreenButton () {
+        this.player.template.theaterButton.addEventListener('click', () => {
+            this.player.fullScreen.toggle('theater');
+        });
+        this.player.template.theaterOffButton.addEventListener('click', () => {
+            this.player.fullScreen.toggle('theater');
+        });
+
+        this.player.template.fullButton.addEventListener('click', () => {
+            this.player.fullScreen.toggle('full');
+        });
+        this.player.template.fullOffButton.addEventListener('click', () => {
+            this.player.fullScreen.toggle('full');
+        });
     }
 
     setAutoHide () {

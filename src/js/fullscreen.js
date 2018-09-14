@@ -4,17 +4,17 @@ class FullScreen {
     constructor (player) {
         this.player = player;
 
-        this.player.events.on('webfullscreen', () => {
+        this.player.events.on('theatermode', () => {
             this.player.resize();
         });
-        this.player.events.on('webfullscreen_cancel', () => {
+        this.player.events.on('theatermode_cancel', () => {
             this.player.resize();
             utils.setScrollPosition(this.lastScrollPosition);
         });
 
         const fullscreenchange = () => {
             this.player.resize();
-            if (this.isFullScreen('browser')) {
+            if (this.isFullScreen('full')) {
                 this.player.events.trigger('fullscreen');
             }
             else {
@@ -46,24 +46,25 @@ class FullScreen {
         }
     }
 
-    isFullScreen (type = 'browser') {
+    isFullScreen (type = 'full') {
         switch (type) {
-        case 'browser':
+        case 'full':
             return document.fullscreenElement || document.mozFullScreenElement || document.webkitFullscreenElement || document.msFullscreenElement;
-        case 'web':
-            return this.player.container.classList.contains('y-player-fulled');
+        case 'theater':
+            return this.player.container.classList.contains('y-player-theater-mode');
         }
     }
 
-    request (type = 'browser') {
-        const anotherType = type === 'browser' ? 'web' : 'browser';
+    request (type = 'full') {
+        const anotherType = type === 'full' ? 'theater' : 'full';
         const anotherTypeOn = this.isFullScreen(anotherType);
         if (!anotherTypeOn) {
             this.lastScrollPosition = utils.getScrollPosition();
         }
 
         switch (type) {
-        case 'browser':
+        case 'full':
+            this.player.container.classList.add('y-player-full-screen');
             if (this.player.container.requestFullscreen) {
                 this.player.container.requestFullscreen();
             }
@@ -84,10 +85,10 @@ class FullScreen {
                 this.player.container.msRequestFullscreen();
             }
             break;
-        case 'web':
-            this.player.container.classList.add('y-player-fulled');
-            document.body.classList.add('y-player-web-fullscreen-fix');
-            this.player.events.trigger('webfullscreen');
+        case 'theater':
+            this.player.container.classList.add('y-player-theater-mode');
+            document.body.classList.add('y-player-theater-mode-fix');
+            this.player.events.trigger('theatermode');
             break;
         }
 
@@ -96,9 +97,10 @@ class FullScreen {
         }
     }
 
-    cancel (type = 'browser') {
+    cancel (type = 'full') {
         switch (type) {
-        case 'browser':
+        case 'full':
+            this.player.container.classList.remove('y-player-full-screen');
             if (document.cancelFullScreen) {
                 document.cancelFullScreen();
             }
@@ -118,15 +120,15 @@ class FullScreen {
                 document.msExitFullscreen();
             }
             break;
-        case 'web':
-            this.player.container.classList.remove('y-player-fulled');
-            document.body.classList.remove('y-player-web-fullscreen-fix');
-            this.player.events.trigger('webfullscreen_cancel');
+        case 'theater':
+            this.player.container.classList.remove('y-player-theater-mode');
+            document.body.classList.remove('y-player-theater-mode-fix');
+            this.player.events.trigger('theatermode_cancel');
             break;
         }
     }
 
-    toggle (type = 'browser') {
+    toggle (type = 'full') {
         if (this.isFullScreen(type)) {
             this.cancel(type);
         }

@@ -609,22 +609,29 @@ button[data-balloon] {
     opacity: 1; }
   .y-player.y-player-show-controller .y-player-controller {
     opacity: 1; }
-  .y-player.y-player-fulled {
+  .y-player.y-player-theater-mode {
     position: fixed;
     z-index: 100000;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%; }
+    .y-player.y-player-theater-mode .y-player-controller .y-player-icons .y-player-theater .y-player-theater-icon {
+      display: none; }
+    .y-player.y-player-theater-mode .y-player-controller .y-player-icons .y-player-theater .y-player-theater-off-icon {
+      display: inline-block; }
+  .y-player.y-player-full-screen .y-player-controller .y-player-icons .y-player-theater {
+    display: none; }
+  .y-player.y-player-full-screen .y-player-controller .y-player-icons .y-player-full .y-player-full-icon {
+    display: none; }
+  .y-player.y-player-full-screen .y-player-controller .y-player-icons .y-player-full .y-player-full-off-icon {
+    display: inline-block; }
   .y-player.y-player-mobile .y-player-controller .y-player-icons .y-player-volume {
     display: none; }
-  .y-player.y-player-mobile .y-player-controller .y-player-icons .y-player-full .y-player-full-in-icon {
-    position: static;
-    display: inline-block; }
   .y-player.y-player-mobile .y-player-bar-time {
     display: none; }
 
-.y-player-web-fullscreen-fix {
+.y-player-theater-mode-fix {
   position: fixed;
   top: 0;
   left: 0;
@@ -977,17 +984,6 @@ button[data-balloon] {
               transition: all .3s ease-in-out;
               -webkit-transform: scale(0);
                       transform: scale(0); }
-    .y-player-controller .y-player-icons .y-player-full {
-      display: inline-block;
-      height: 100%;
-      position: relative; }
-      .y-player-controller .y-player-icons .y-player-full:hover .y-player-full-in-icon {
-        display: block; }
-      .y-player-controller .y-player-icons .y-player-full .y-player-full-in-icon {
-        position: absolute;
-        top: -30px;
-        z-index: 1;
-        display: none; }
     .y-player-controller .y-player-icons .y-player-quality {
       position: relative;
       display: inline-block;
@@ -1056,65 +1052,16 @@ button[data-balloon] {
         line-height: 25px; }
         .y-player-controller .y-player-icons .y-player-speed .y-player-speed-item:hover {
           background-color: rgba(255, 255, 255, 0.1); }
-    .y-player-controller .y-player-icons .y-player-label {
-      color: #eee;
-      font-size: 13px;
+    .y-player-controller .y-player-icons .y-player-theater {
       display: inline-block;
-      vertical-align: middle;
-      white-space: nowrap; }
-    .y-player-controller .y-player-icons .y-player-toggle {
-      width: 32px;
-      height: 20px;
-      text-align: center;
-      font-size: 0;
-      vertical-align: middle;
-      position: absolute;
-      top: 5px;
-      right: 10px; }
-      .y-player-controller .y-player-icons .y-player-toggle input {
-        max-height: 0;
-        max-width: 0;
+      height: 100%; }
+      .y-player-controller .y-player-icons .y-player-theater .y-player-theater-off-icon {
         display: none; }
-      .y-player-controller .y-player-icons .y-player-toggle input + label {
-        display: inline-block;
-        position: relative;
-        box-shadow: #dfdfdf 0 0 0 0 inset;
-        border: 1px solid #dfdfdf;
-        height: 20px;
-        width: 32px;
-        border-radius: 10px;
-        box-sizing: border-box;
-        cursor: pointer;
-        transition: .2s ease-in-out; }
-      .y-player-controller .y-player-icons .y-player-toggle input + label:before {
-        content: "";
-        position: absolute;
-        display: block;
-        height: 18px;
-        width: 18px;
-        top: 0;
-        left: 0;
-        border-radius: 15px;
-        transition: .2s ease-in-out; }
-      .y-player-controller .y-player-icons .y-player-toggle input + label:after {
-        content: "";
-        position: absolute;
-        display: block;
-        left: 0;
-        top: 0;
-        border-radius: 15px;
-        background: #fff;
-        transition: .2s ease-in-out;
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
-        height: 18px;
-        width: 18px; }
-      .y-player-controller .y-player-icons .y-player-toggle input:checked + label {
-        border-color: rgba(255, 255, 255, 0.5); }
-      .y-player-controller .y-player-icons .y-player-toggle input:checked + label:before {
-        width: 30px;
-        background: rgba(255, 255, 255, 0.5); }
-      .y-player-controller .y-player-icons .y-player-toggle input:checked + label:after {
-        left: 12px; }
+    .y-player-controller .y-player-icons .y-player-full {
+      display: inline-block;
+      height: 100%; }
+      .y-player-controller .y-player-icons .y-player-full .y-player-full-off-icon {
+        display: none; }
 
 .y-player-logo {
   pointer-events: none;

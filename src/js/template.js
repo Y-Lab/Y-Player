@@ -43,8 +43,10 @@ class Template {
         this.mask = this.container.querySelector('.y-player-mask');
         this.dtime = this.container.querySelector('.y-player-dtime');
         this.controller = this.container.querySelector('.y-player-controller');
-        this.browserFullButton = this.container.querySelector('.y-player-full-icon');
-        this.webFullButton = this.container.querySelector('.y-player-full-in-icon');
+        this.theaterButton = this.container.querySelector('.y-player-theater-icon');
+        this.theaterOffButton = this.container.querySelector('.y-player-theater-off-icon');
+        this.fullButton = this.container.querySelector('.y-player-full-icon');
+        this.fullOffButton = this.container.querySelector('.y-player-full-off-icon');
         this.menu = this.container.querySelector('.y-player-menu');
         this.menuItem = this.container.querySelectorAll('.y-player-menu-item');
         this.speedList = this.container.querySelector('.y-player-speed-list');

@@ -3,9 +3,10 @@ import pause from '../icons/pause.svg';
 import volumeUp from '../icons/volume-up.svg';
 import volumeDown from '../icons/volume-down.svg';
 import volumeOff from '../icons/volume-off.svg';
-import full from '../icons/full.svg';
-import fullWeb from '../icons/full-web.svg';
-import right from '../icons/right.svg';
+import theaterMode from '../icons/theater-mode.svg';
+import defaultView from '../icons/default-view.svg';
+import fullScreen from '../icons/full-screen.svg';
+import exitFullScreen from '../icons/exit-full-screen.svg';
 import loading from '../icons/loading.svg';
 
 const Icons = {
@@ -14,9 +15,10 @@ const Icons = {
     volumeUp: volumeUp,
     volumeDown: volumeDown,
     volumeOff: volumeOff,
-    full: full,
-    fullWeb: fullWeb,
-    right: right,
+    theaterMode: theaterMode,
+    defaultView: defaultView,
+    fullScreen: fullScreen,
+    exitFullScreen: exitFullScreen,
     loading: loading,
 };
 

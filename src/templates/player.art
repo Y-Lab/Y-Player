@@ -1,9 +1,7 @@
 <div class="y-player-mask"></div>
 <div class="y-player-video-wrap">
     {{ include './video.art' video }}
-    {{ if options.logo }}<div class="y-player-logo">
-        <img src="{{ options.logo }}">
-    </div>{{ /if }}
+    {{ if options.logo }}<div class="y-player-logo"><img src="{{ options.logo }}"></div>{{ /if }}
     <div class="y-player-bezel">
         <span class="y-player-bezel-icon"></span>
         <span class="y-player-loading-icon">{{@ icons.loading }}</span>
@@ -48,12 +46,20 @@
                 </div>
             </div>
         </div>
-        <div class="y-player-full">
-            <button class="y-player-icon y-player-full-in-icon" data-balloon="{{ tran('Web full screen') }}" data-balloon-pos="up">
-                <span class="y-player-icon-content">{{@ icons.fullWeb }}</span>
+        <div class="y-player-theater">
+            <button class="y-player-icon y-player-theater-icon" data-balloon="{{ tran('Theater mode') }}" data-balloon-pos="up">
+                <span class="y-player-icon-content">{{@ icons.theaterMode }}</span>
             </button>
+            <button class="y-player-icon y-player-theater-off-icon" data-balloon="{{ tran('Default view') }}" data-balloon-pos="up">
+                <span class="y-player-icon-content">{{@ icons.defaultView }}</span>
+            </button>
+        </div>
+        <div class="y-player-full">
             <button class="y-player-icon y-player-full-icon" data-balloon="{{ tran('Full screen') }}" data-balloon-pos="up">
-                <span class="y-player-icon-content">{{@ icons.full }}</span>
+                <span class="y-player-icon-content">{{@ icons.fullScreen }}</span>
+            </button>
+            <button class="y-player-icon y-player-full-off-icon" data-balloon="{{ tran('Exit full screen') }}" data-balloon-pos="up">
+                <span class="y-player-icon-content">{{@ icons.exitFullScreen }}</span>
             </button>
         </div>
     </div>

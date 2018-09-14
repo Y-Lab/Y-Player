@@ -83,22 +83,44 @@
             opacity: 1;
         }
     }
-    &.y-player-fulled {
+    &.y-player-theater-mode {
         position: fixed;
         z-index: 100000;
         left: 0;
         top: 0;
         width: 100%;
         height: 100%;
+
+        .y-player-controller .y-player-icons {
+            .y-player-theater {
+                .y-player-theater-icon {
+                    display: none;
+                }
+                .y-player-theater-off-icon {
+                    display: inline-block;
+                }
+            }
+        }
+    }
+    &.y-player-full-screen {
+        .y-player-controller .y-player-icons {
+            .y-player-theater {
+                display: none;
+            }
+            .y-player-full {
+                .y-player-full-icon {
+                    display: none;
+                }
+                .y-player-full-off-icon {
+                    display: inline-block;
+                }
+            }
+        }
     }
     &.y-player-mobile {
         .y-player-controller .y-player-icons {
             .y-player-volume {
                 display: none;
-            }
-            .y-player-full .y-player-full-in-icon {
-                position: static;
-                display: inline-block;
             }
         }
 
@@ -109,7 +131,7 @@
 }
 
 // To hide scroll bar, apply this class to <body>
-.y-player-web-fullscreen-fix {
+.y-player-theater-mode-fix {
     position: fixed;
     top: 0;
     left: 0;
