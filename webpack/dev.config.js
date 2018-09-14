@@ -84,8 +84,9 @@ module.exports = {
         ]
     },
     devServer: {
-        compress: true,
         contentBase: path.resolve(__dirname, '..', 'docs'),
+        compress: true,
+        port: 9000,
         clientLogLevel: 'none',
         quiet: false,
         open: true,
@@ -109,6 +110,6 @@ module.exports = {
         tls: 'empty'
     },
     performance: {
-        hints: false
+        hints: 'warning'
     }
 };

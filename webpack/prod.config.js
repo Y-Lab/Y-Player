@@ -2,14 +2,16 @@
 
 const path = require('path');
 const webpack = require('webpack');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CssoWebpackPlugin = require('csso-webpack-plugin').default;
 const GitRevisionPlugin = require('git-revision-webpack-plugin');
 const gitRevisionPlugin = new GitRevisionPlugin();
 
 module.exports = {
     mode: 'production',
     bail: true,
-    devtool: 'source-map',
+    devtool: 'hidden-source-map',
     entry: {
         player: './src/js/index.js'
     },
@@ -88,6 +90,13 @@ module.exports = {
             }
         ]
     },
+    optimization: {
+        minimizer: [
+            new UglifyJsPlugin({
+                sourceMap: true
+            })
+        ]
+    },
     plugins: [
         new webpack.DefinePlugin({
             Y_PLAYER_VERSION: `"${require('../package.json').version}"`,
@@ -95,7 +104,8 @@ module.exports = {
         }),
         new MiniCssExtractPlugin({
             filename: '[name].min.css'
-        })
+        }),
+        new CssoWebpackPlugin({})
     ],
     node: {
         dgram: 'empty',
