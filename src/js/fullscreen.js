@@ -64,7 +64,9 @@ class FullScreen {
 
         switch (type) {
         case 'full':
-            this.player.container.classList.add('y-player-full-screen');
+            if (!utils.isMobile) {
+                this.player.container.classList.add('y-player-full-screen');
+            }
             if (this.player.container.requestFullscreen) {
                 this.player.container.requestFullscreen();
             }
@@ -100,7 +102,9 @@ class FullScreen {
     cancel (type = 'full') {
         switch (type) {
         case 'full':
-            this.player.container.classList.remove('y-player-full-screen');
+            if (!utils.isMobile) {
+                this.player.container.classList.remove('y-player-full-screen');
+            }
             if (document.cancelFullScreen) {
                 document.cancelFullScreen();
             }
