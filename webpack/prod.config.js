@@ -5,8 +5,6 @@ const webpack = require('webpack');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssoWebpackPlugin = require('csso-webpack-plugin').default;
-const GitRevisionPlugin = require('git-revision-webpack-plugin');
-const gitRevisionPlugin = new GitRevisionPlugin();
 
 module.exports = {
     mode: 'production',
@@ -99,8 +97,7 @@ module.exports = {
     },
     plugins: [
         new webpack.DefinePlugin({
-            Y_PLAYER_VERSION: `"${require('../package.json').version}"`,
-            GIT_HASH: JSON.stringify(gitRevisionPlugin.version())
+            Y_PLAYER_VERSION: `"${require('../package.json').version}"`
         }),
         new MiniCssExtractPlugin({
             filename: '[name].min.css'

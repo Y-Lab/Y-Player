@@ -2,8 +2,6 @@
 
 const path = require('path');
 const webpack = require('webpack');
-const GitRevisionPlugin = require('git-revision-webpack-plugin');
-const gitRevisionPlugin = new GitRevisionPlugin();
 
 module.exports = {
     mode: 'development',
@@ -99,8 +97,7 @@ module.exports = {
     },
     plugins: [
         new webpack.DefinePlugin({
-            Y_PLAYER_VERSION: `"${require('../package.json').version}"`,
-            GIT_HASH: JSON.stringify(gitRevisionPlugin.version())
+            Y_PLAYER_VERSION: `"${require('../package.json').version}"`
         })
     ],
     node: {
