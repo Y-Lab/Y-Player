@@ -360,7 +360,7 @@ class Player {
         // video download error: an error occurs
         this.on('error', () => {
             if (!this.video.error) {
-                // Not a video load error, may be caused by poster loading failure, see https://github.com/MoePlayer/DPlayer/issues/307
+                // not a video load error, may be caused by poster loading failure
                 return;
             }
             this.tran && this.notice && this.type !== 'webtorrent' & this.notice(this.tran('Video load failed'), -1);
