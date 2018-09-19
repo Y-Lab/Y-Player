@@ -335,7 +335,9 @@
                 color: #fff;
                 text-align: center;
             }
-            .y-player-speed-item {
+            .y-player-speed-item,
+            .y-player-speed-plus,
+            .y-player-speed-minus {
                 height: 25px;
                 box-sizing: border-box;
                 cursor: pointer;

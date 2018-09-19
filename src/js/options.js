@@ -13,7 +13,6 @@ export default (options) => {
         hotkey: true,
         preload: 'metadata',
         volume: 0.5,
-        speed: [0.5, 0.75, 1, 1.25, 1.5, 2],
         video: {},
         contextmenu: [],
         mutex: true

@@ -8,6 +8,7 @@ class HotKey {
                     if (tag !== 'INPUT' && tag !== 'TEXTAREA' && editable !== '' && editable !== 'true') {
                         const event = e || window.event;
                         let percentage;
+                        let rate;
                         switch (event.keyCode) {
                         case 32:
                             event.preventDefault();
@@ -32,6 +33,18 @@ class HotKey {
                             event.preventDefault();
                             percentage = player.volume() - 0.1;
                             player.volume(percentage);
+                            break;
+                        case 189:
+                            event.preventDefault();
+                            rate = player.video.playbackRate - 0.05;
+                            if (rate > 0) {
+                                player.speed(rate);
+                            }
+                            break;
+                        case 187:
+                            event.preventDefault();
+                            rate = player.video.playbackRate + 0.05;
+                            player.speed(rate);
                             break;
                         }
                     }

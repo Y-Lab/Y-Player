@@ -51,6 +51,8 @@ class Template {
         this.menuItem = this.container.querySelectorAll('.y-player-menu-item');
         this.speedList = this.container.querySelector('.y-player-speed-list');
         this.speedButton = this.container.querySelector('.y-player-speed-icon');
+        this.speedPlusButton = this.container.querySelector('.y-player-speed-plus');
+        this.speedMinusButton = this.container.querySelector('.y-player-speed-minus');
         this.qualityList = this.container.querySelector('.y-player-quality-list');
         this.qualityButton = this.container.querySelector('.y-player-quality-icon');
         this.barPreview = this.container.querySelector('.y-player-bar-preview');

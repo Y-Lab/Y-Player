@@ -102,7 +102,7 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename: '[name].min.css'
         }),
-        new CssoWebpackPlugin({})
+        new CssoWebpackPlugin()
     ],
     node: {
         dgram: 'empty',

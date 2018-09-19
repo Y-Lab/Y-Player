@@ -470,7 +470,9 @@ class Player {
 
     speed (rate) {
         this.video.playbackRate = rate;
-        this.template.speedButton.innerHTML = rate + '&times;';
+        const formatRate = `${Number(rate).toFixed(2)}&times;`;
+        this.template.speedButton.innerHTML = formatRate;
+        this.notice(`${this.tran('Speed')} ${formatRate}`);
     }
 
     destroy () {

@@ -31,6 +31,8 @@ class Controller {
         }
         this.initQualityButton();
         this.initSpeedButton();
+        this.initSpeedPlusButton();
+        this.initSpeedMinusButton();
         this.initFullScreenButton();
     }
 
@@ -214,6 +216,22 @@ class Controller {
         this.player.template.speedList.addEventListener('click', (e) => {
             if (e.target.classList.contains('y-player-speed-item')) {
                 this.player.speed(e.target.dataset.speed);
+            }
+        });
+    }
+
+    initSpeedPlusButton () {
+        this.player.template.speedPlusButton.addEventListener('click', () => {
+            const rate = this.player.video.playbackRate + 0.05;
+            this.player.speed(rate);
+        });
+    }
+
+    initSpeedMinusButton () {
+        this.player.template.speedMinusButton.addEventListener('click', () => {
+            const rate = this.player.video.playbackRate - 0.05;
+            if (rate > 0) {
+                this.player.speed(rate);
             }
         });
     }
