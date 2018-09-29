@@ -9,6 +9,6 @@ $('#copyright-year').text(function () {
 const player = new Player({
     container: document.getElementById('player'),
     video: {
-        url: 'https://pan.prprpr.me/?/dplayer/hikarunara.mp4'
+        url: 'video/demo.mp4'
     }
 });
