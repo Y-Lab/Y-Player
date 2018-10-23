@@ -36,7 +36,7 @@ class HotKey {
                             break;
                         case 48:
                             event.preventDefault();
-                            rate = 1.0;
+                            rate = 1;
                             player.speed(rate);
                             break;
                         case 189:
