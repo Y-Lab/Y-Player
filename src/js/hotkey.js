@@ -34,6 +34,11 @@ class HotKey {
                             percentage = player.volume() - 0.1;
                             player.volume(percentage);
                             break;
+                        case 48:
+                            event.preventDefault();
+                            rate = 1.0;
+                            player.speed(rate);
+                            break;
                         case 189:
                             event.preventDefault();
                             rate = player.video.playbackRate - 0.05;
