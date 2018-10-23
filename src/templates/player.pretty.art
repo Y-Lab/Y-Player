@@ -42,13 +42,13 @@
             <button class="y-player-icon y-player-speed-icon" data-balloon="{{ tran('Speed') }}" data-balloon-pos="up">1.00&times;</button>
             <div class="y-player-speed-mask">
                 <div class="y-player-speed-list">
-                    <div class="y-player-speed-plus">加速</div>
+                    <div class="y-player-speed-plus">{{ tran('Increase speed') }}</div>
                     <div class="y-player-speed-item" data-speed="2">2.00&times;</div>
                     <div class="y-player-speed-item" data-speed="1.5">1.50&times;</div>
-                    <div class="y-player-speed-item" data-speed="1">1.00&times;</div>
+                    <div class="y-player-speed-item" data-speed="1">{{ tran('Normal') }}</div>
                     <div class="y-player-speed-item" data-speed="0.75">0.75&times;</div>
                     <div class="y-player-speed-item" data-speed="0.5">0.50&times;</div>
-                    <div class="y-player-speed-minus">减速</div>
+                    <div class="y-player-speed-minus">{{ tran('Decrease speed') }}</div>
                 </div>
             </div>
         </div>

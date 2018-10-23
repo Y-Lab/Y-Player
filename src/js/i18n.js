@@ -26,6 +26,7 @@ const tranTxt = {
         'Switched to': '已经切换至',
         'quality': '画质',
         'Speed': '速度',
+        'Normal': '正常',
         'Decrease speed': '减速',
         'Increase speed': '加速',
         'Default view': '默认视图',
