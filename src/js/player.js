@@ -281,7 +281,7 @@ class Player {
 
             // https://github.com/Bilibili/flv.js
             case 'flv':
-                if (flvjs && flvjs.isSupported()) {
+                if (flvjs) {
                     if (flvjs.isSupported()) {
                         const flvPlayer = flvjs.createPlayer({
                             type: 'flv',
@@ -402,6 +402,7 @@ class Player {
     }
 
     switchQuality (index) {
+        index = typeof index === 'string' ? parseInt(index) : index;
         if (this.qualityIndex === index || this.switchingQuality) {
             return;
         }
