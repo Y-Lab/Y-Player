@@ -46,27 +46,27 @@ const utils = {
      * getBoundingClientRect 在 Firefox 11 及以下返回的值会把 transform 的值也包含进去
      * getBoundingClientRect 在 Opera 10.5 及以下返回的值缺失 width、height 值
      */
-    getBoundingClientRectViewLeft (element) {
-        const scrollTop = document.documentElement.scrollTop;
+    // getBoundingClientRectViewLeft (element) {
+    //     const scrollTop = document.documentElement.scrollTop;
 
-        if (element.getBoundingClientRect) {
-            if (typeof this.getBoundingClientRectViewLeft.offset !== 'number') {
-                let temp = document.createElement('div');
-                temp.style.cssText = 'position:absolute;top:0;left:0;';
-                document.body.appendChild(temp);
-                this.getBoundingClientRectViewLeft.offset = -temp.getBoundingClientRect().top - scrollTop;
-                document.body.removeChild(temp);
-                temp = null;
-            }
-            const rect = element.getBoundingClientRect();
-            const offset = this.getBoundingClientRectViewLeft.offset;
+    //     if (element.getBoundingClientRect) {
+    //         if (typeof this.getBoundingClientRectViewLeft.offset !== 'number') {
+    //             let temp = document.createElement('div');
+    //             temp.style.cssText = 'position:absolute;top:0;left:0;';
+    //             document.body.appendChild(temp);
+    //             this.getBoundingClientRectViewLeft.offset = -temp.getBoundingClientRect().top - scrollTop;
+    //             document.body.removeChild(temp);
+    //             temp = null;
+    //         }
+    //         const rect = element.getBoundingClientRect();
+    //         const offset = this.getBoundingClientRectViewLeft.offset;
 
-            return rect.left + offset;
-        } else {
-            // not support getBoundingClientRect
-            return this.getElementViewLeft(element);
-        }
-    },
+    //         return rect.left + offset;
+    //     } else {
+    //         // not support getBoundingClientRect
+    //         return this.getElementViewLeft(element);
+    //     }
+    // },
 
     getScrollPosition () {
         return {
