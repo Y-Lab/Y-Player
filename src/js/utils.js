@@ -41,7 +41,7 @@ const utils = {
 
     /**
      * optimize control play progress
-     * optimize get element's view position,for float dialog video player
+     * optimize get element's view position, for float dialog video player
      * getBoundingClientRect 在 IE8 及以下返回的值缺失 width、height 值
      * getBoundingClientRect 在 Firefox 11 及以下返回的值会把 transform 的值也包含进去
      * getBoundingClientRect 在 Opera 10.5 及以下返回的值缺失 width、height 值
