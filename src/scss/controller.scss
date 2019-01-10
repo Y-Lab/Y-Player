@@ -6,7 +6,6 @@
     bottom: 0;
     transition: all 0.3s ease;
 }
-
 .y-player-controller {
     position: absolute;
     bottom: 0;
@@ -303,54 +302,20 @@
             }
         }
         .y-player-speed {
-            position: relative;
             display: inline-block;
             height: 100%;
-            z-index: 2;
-            &:hover {
-                .y-player-speed-list {
-                    display: block;
-                }
-                .y-player-speed-mask {
-                    display: block;
-                }
-            }
-            .y-player-speed-mask {
-                display: none;
-                position: absolute;
-                bottom: 38px;
-                left: -18px;
-                width: 80px;
-                padding-bottom: 12px;
-            }
-            .y-player-speed-list {
-                display: none;
-                font-size: 12px;
-                width: 80px;
-                border-radius: 2px;
-                background: rgba(28, 28, 28, 0.9);
-                padding: 5px 0;
-                transition: all .3s ease-in-out;
-                overflow: hidden;
-                color: #fff;
-                text-align: center;
-            }
-            .y-player-speed-item,
-            .y-player-speed-plus,
-            .y-player-speed-minus {
-                height: 25px;
-                box-sizing: border-box;
-                cursor: pointer;
-                line-height: 25px;
-                &:hover {
-                    background-color: rgba(255, 255, 255, .1);
-                }
-            }
+        }
+        .y-player-speed-down {
+            display: inline-block;
+            height: 100%;
+        }
+        .y-player-speed-up {
+            display: inline-block;
+            height: 100%;
         }
         .y-player-theater {
             display: inline-block;
             height: 100%;
-
             .y-player-theater-off-icon {
                 display: none;
             }
@@ -358,7 +323,6 @@
         .y-player-full {
             display: inline-block;
             height: 100%;
-
             .y-player-full-off-icon {
                 display: none;
             }

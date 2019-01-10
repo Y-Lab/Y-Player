@@ -31,8 +31,8 @@ class Controller {
         }
         this.initQualityButton();
         this.initSpeedButton();
-        this.initSpeedPlusButton();
-        this.initSpeedMinusButton();
+        this.initSpeedDownButton();
+        this.initSpeedUpButton();
         this.initFullScreenButton();
     }
 
@@ -213,26 +213,24 @@ class Controller {
     }
 
     initSpeedButton () {
-        this.player.template.speedList.addEventListener('click', (e) => {
-            if (e.target.classList.contains('y-player-speed-item')) {
-                this.player.speed(e.target.dataset.speed);
-            }
+        this.player.template.speedButton.addEventListener('click', () => {
+            this.player.speed(1.0);
         });
     }
 
-    initSpeedPlusButton () {
-        this.player.template.speedPlusButton.addEventListener('click', () => {
-            const rate = this.player.video.playbackRate + 0.05;
-            this.player.speed(rate);
-        });
-    }
-
-    initSpeedMinusButton () {
-        this.player.template.speedMinusButton.addEventListener('click', () => {
+    initSpeedDownButton () {
+        this.player.template.speedDownButton.addEventListener('click', () => {
             const rate = this.player.video.playbackRate - 0.05;
             if (rate > 0) {
                 this.player.speed(rate);
             }
+        });
+    }
+
+    initSpeedUpButton () {
+        this.player.template.speedUpButton.addEventListener('click', () => {
+            const rate = this.player.video.playbackRate + 0.05;
+            this.player.speed(rate);
         });
     }
 
