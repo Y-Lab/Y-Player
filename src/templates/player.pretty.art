@@ -38,19 +38,18 @@
                 </div>
             </div>
         </div>{{ /if }}
+        <div class="y-player-speed-down">
+            <button class="y-player-icon y-player-speed-down-icon" data-balloon="{{ tran('Decrease speed') }}" data-balloon-pos="up">
+                <span class="y-player-icon-content">{{@ icons.speedDown}}</span>
+            </button>
+        </div>
         <div class="y-player-speed">
             <button class="y-player-icon y-player-speed-icon" data-balloon="{{ tran('Speed') }}" data-balloon-pos="up">1.00&times;</button>
-            <div class="y-player-speed-mask">
-                <div class="y-player-speed-list">
-                    <div class="y-player-speed-plus">{{ tran('Increase speed') }}</div>
-                    <div class="y-player-speed-item" data-speed="2">2.00&times;</div>
-                    <div class="y-player-speed-item" data-speed="1.5">1.50&times;</div>
-                    <div class="y-player-speed-item" data-speed="1">{{ tran('Normal') }}</div>
-                    <div class="y-player-speed-item" data-speed="0.75">0.75&times;</div>
-                    <div class="y-player-speed-item" data-speed="0.5">0.50&times;</div>
-                    <div class="y-player-speed-minus">{{ tran('Decrease speed') }}</div>
-                </div>
-            </div>
+        </div>
+        <div class="y-player-speed-up">
+            <button class="y-player-icon y-player-speed-up-icon" data-balloon="{{ tran('Increase speed') }}" data-balloon-pos="up">
+                <span class="y-player-icon-content">{{@ icons.speedUp}}</span>
+            </button>
         </div>
         <div class="y-player-theater">
             <button class="y-player-icon y-player-theater-icon" data-balloon="{{ tran('Theater mode') }}" data-balloon-pos="up">

@@ -49,10 +49,9 @@ class Template {
         this.fullOffButton = this.container.querySelector('.y-player-full-off-icon');
         this.menu = this.container.querySelector('.y-player-menu');
         this.menuItem = this.container.querySelectorAll('.y-player-menu-item');
-        this.speedList = this.container.querySelector('.y-player-speed-list');
         this.speedButton = this.container.querySelector('.y-player-speed-icon');
-        this.speedPlusButton = this.container.querySelector('.y-player-speed-plus');
-        this.speedMinusButton = this.container.querySelector('.y-player-speed-minus');
+        this.speedDownButton = this.container.querySelector('.y-player-speed-down-icon');
+        this.speedUpButton = this.container.querySelector('.y-player-speed-up-icon');
         this.qualityList = this.container.querySelector('.y-player-quality-list');
         this.qualityButton = this.container.querySelector('.y-player-quality-icon');
         this.barPreview = this.container.querySelector('.y-player-bar-preview');
