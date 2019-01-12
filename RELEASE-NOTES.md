@@ -1,6 +1,6 @@
 ## RELEASE NOTES
 
-### Version 1.0.1 - January 10, 2019
+### Version 1.0.1 - January 13, 2019
 
 **IMPROVED**
 - **Controller** - Update playback rate control buttons #1
