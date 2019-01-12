@@ -43,7 +43,7 @@ module.exports = {
                         loader: 'babel-loader',
                         options: {
                             compact: true,
-                            presets: ['env']
+                            presets: ['@babel/preset-env']
                         }
                     }
                 ]
@@ -56,7 +56,6 @@ module.exports = {
                         loader: 'css-loader',
                         options: {
                             importLoaders: 1,
-                            minimize: true,
                             sourceMap: true
                         }
                     },
