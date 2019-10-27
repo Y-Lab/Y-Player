@@ -6,7 +6,7 @@ class User {
             volume: 'y-player-volume'
         };
         this.default = {
-            volume: player.options.hasOwnProperty('volume') ? player.options.volume : 0.5
+            volume: Object.prototype.hasOwnProperty.call(player.options, 'volume') ? player.options.volume : 0.5
         };
         this.data = {};
 

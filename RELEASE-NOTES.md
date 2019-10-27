@@ -1,5 +1,10 @@
 ## RELEASE NOTES
 
+### Version 1.0.3 - October 28, 2019
+
+**IMPROVED**
+- **Controller** - Add seek -5 and +5 seconds buttons #8
+
 ### Version 1.0.2 - March 30, 2019
 
 **IMPROVED**

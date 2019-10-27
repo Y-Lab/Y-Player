@@ -1,5 +1,5 @@
 import Icons from './icons';
-import tplPlayer from '../templates/player.art';
+import templatePlayer from '../templates/player.art';
 
 class Template {
     constructor (options) {
@@ -11,7 +11,7 @@ class Template {
     }
 
     init () {
-        this.container.innerHTML = tplPlayer({
+        this.container.innerHTML = templatePlayer({
             options: this.options,
             index: this.index,
             tran: this.tran,
@@ -49,6 +49,8 @@ class Template {
         this.fullOffButton = this.container.querySelector('.y-player-full-off-icon');
         this.menu = this.container.querySelector('.y-player-menu');
         this.menuItem = this.container.querySelectorAll('.y-player-menu-item');
+        this.backwardButton = this.container.querySelector('.y-player-backward-icon');
+        this.forwardButton = this.container.querySelector('.y-player-forward-icon');
         this.speedButton = this.container.querySelector('.y-player-speed-icon');
         this.speedDownButton = this.container.querySelector('.y-player-speed-down-icon');
         this.speedUpButton = this.container.querySelector('.y-player-speed-up-icon');

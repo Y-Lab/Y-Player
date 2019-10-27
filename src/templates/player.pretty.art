@@ -38,32 +38,38 @@
                 </div>
             </div>
         </div>{{ /if }}
+        <div class="y-player-backward">
+            <button class="y-player-icon y-player-backward-icon" aria-label="{{ tran('REW') }} 5 {{ tran('s') }}" data-balloon-pos="up">-5s</button>
+        </div>
+        <div class="y-player-forward">
+            <button class="y-player-icon y-player-forward-icon" aria-label="{{ tran('FF') }} 5 {{ tran('s') }}" data-balloon-pos="up">+5s</button>
+        </div>
         <div class="y-player-speed-down">
-            <button class="y-player-icon y-player-speed-down-icon" data-balloon="{{ tran('Decrease speed') }}" data-balloon-pos="up">
+            <button class="y-player-icon y-player-speed-down-icon" aria-label="{{ tran('Decrease speed') }}" data-balloon-pos="up">
                 <span class="y-player-icon-content">{{@ icons.speedDown}}</span>
             </button>
         </div>
         <div class="y-player-speed">
-            <button class="y-player-icon y-player-speed-icon" data-balloon="{{ tran('Speed') }}" data-balloon-pos="up">1.00&times;</button>
+            <button class="y-player-icon y-player-speed-icon" aria-label="{{ tran('Speed') }}" data-balloon-pos="up">1.00&times;</button>
         </div>
         <div class="y-player-speed-up">
-            <button class="y-player-icon y-player-speed-up-icon" data-balloon="{{ tran('Increase speed') }}" data-balloon-pos="up">
+            <button class="y-player-icon y-player-speed-up-icon" aria-label="{{ tran('Increase speed') }}" data-balloon-pos="up">
                 <span class="y-player-icon-content">{{@ icons.speedUp}}</span>
             </button>
         </div>
         <div class="y-player-theater">
-            <button class="y-player-icon y-player-theater-icon" data-balloon="{{ tran('Theater mode') }}" data-balloon-pos="up">
+            <button class="y-player-icon y-player-theater-icon" aria-label="{{ tran('Theater mode') }}" data-balloon-pos="up">
                 <span class="y-player-icon-content">{{@ icons.theaterMode }}</span>
             </button>
-            <button class="y-player-icon y-player-theater-off-icon" data-balloon="{{ tran('Default view') }}" data-balloon-pos="up">
+            <button class="y-player-icon y-player-theater-off-icon" aria-label="{{ tran('Default view') }}" data-balloon-pos="up">
                 <span class="y-player-icon-content">{{@ icons.defaultView }}</span>
             </button>
         </div>
         <div class="y-player-full">
-            <button class="y-player-icon y-player-full-icon" data-balloon="{{ tran('Full screen') }}" data-balloon-pos="up">
+            <button class="y-player-icon y-player-full-icon" aria-label="{{ tran('Full screen') }}" data-balloon-pos="up">
                 <span class="y-player-icon-content">{{@ icons.fullScreen }}</span>
             </button>
-            <button class="y-player-icon y-player-full-off-icon" data-balloon="{{ tran('Exit full screen') }}" data-balloon-pos="up">
+            <button class="y-player-icon y-player-full-off-icon" aria-label="{{ tran('Exit full screen') }}" data-balloon-pos="up">
                 <span class="y-player-icon-content">{{@ icons.exitFullScreen }}</span>
             </button>
         </div>

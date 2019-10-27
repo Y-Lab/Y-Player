@@ -191,6 +191,18 @@
                 line-height: 22px;
                 font-size: 14px;
             }
+            &.y-player-backward-icon {
+                color: #fff;
+                width: auto;
+                line-height: 22px;
+                font-size: 14px;
+            }
+            &.y-player-forward-icon {
+                color: #fff;
+                width: auto;
+                line-height: 22px;
+                font-size: 14px;
+            }
             &.y-player-speed-icon {
                 color: #fff;
                 width: auto;
@@ -300,6 +312,14 @@
                     background-color: rgba(255, 255, 255, .1);
                 }
             }
+        }
+        .y-player-backward {
+            display: inline-block;
+            height: 100%;
+        }
+        .y-player-forward {
+            display: inline-block;
+            height: 100%;
         }
         .y-player-speed {
             display: inline-block;

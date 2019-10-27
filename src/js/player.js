@@ -15,7 +15,7 @@ import Timer from './timer';
 import HotKey from './hotkey';
 import ContextMenu from './contextmenu';
 import InfoPanel from './info-panel';
-import tplVideo from '../templates/video.art';
+import templateVideo from '../templates/video.art';
 
 let index = 0;
 const instances = [];
@@ -415,7 +415,7 @@ class Player {
 
         const paused = this.video.paused;
         this.video.pause();
-        const videoHTML = tplVideo({
+        const videoHTML = templateVideo({
             current: false,
             pic: null,
             preload: 'auto',

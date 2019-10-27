@@ -18,7 +18,7 @@ export default (options) => {
         mutex: true
     };
     for (const defaultKey in defaultOption) {
-        if (defaultOption.hasOwnProperty(defaultKey) && !options.hasOwnProperty(defaultKey)) {
+        if (Object.prototype.hasOwnProperty.call(defaultOption, defaultKey) && !Object.prototype.hasOwnProperty.call(options, defaultKey)) {
             options[defaultKey] = defaultOption[defaultKey];
         }
     }

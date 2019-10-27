@@ -30,6 +30,8 @@ class Controller {
             this.initVolumeButton();
         }
         this.initQualityButton();
+        this.initBackwardButton();
+        this.initForwardButton();
         this.initSpeedButton();
         this.initSpeedDownButton();
         this.initSpeedUpButton();
@@ -135,7 +137,7 @@ class Controller {
                     this.thumbnails && this.thumbnails.show();
                 }
                 this.thumbnails && this.thumbnails.move(tx);
-                this.player.template.playedBarTime.style.left = `${(tx - (time >= 3600 ? 25 : 20))}px`;
+                this.player.template.playedBarTime.style.left = `${tx - (time >= 3600 ? 25 : 20)}px`;
                 this.player.template.playedBarTime.innerText = utils.secondToTime(time);
                 this.player.template.playedBarTime.classList.remove('hidden');
             }
@@ -210,6 +212,18 @@ class Controller {
                 }
             });
         }
+    }
+
+    initBackwardButton () {
+        this.player.template.backwardButton.addEventListener('click', () => {
+            this.player.seek(this.player.video.currentTime - 5);
+        });
+    }
+
+    initForwardButton () {
+        this.player.template.forwardButton.addEventListener('click', () => {
+            this.player.seek(this.player.video.currentTime + 5);
+        });
     }
 
     initSpeedButton () {
