@@ -10,8 +10,7 @@ class Timer {
             window.msRequestAnimationFrame ||
             function (callback) {
                 window.setTimeout(callback, 1000 / 60);
-            }
-        )();
+            })();
 
         this.types = ['loading', 'info', 'fps'];
 
@@ -35,15 +34,11 @@ class Timer {
             if (this.enableloadingChecker) {
                 // whether the video is buffering
                 currentPlayPos = this.player.video.currentTime;
-                if (!bufferingDetected
-                    && currentPlayPos === lastPlayPos
-                    && !this.player.video.paused) {
+                if (!bufferingDetected && currentPlayPos === lastPlayPos && !this.player.video.paused) {
                     this.player.container.classList.add('y-player-loading');
                     bufferingDetected = true;
                 }
-                if (bufferingDetected
-                    && currentPlayPos > lastPlayPos
-                    && !this.player.video.paused) {
+                if (bufferingDetected && currentPlayPos > lastPlayPos && !this.player.video.paused) {
                     this.player.container.classList.remove('y-player-loading');
                     bufferingDetected = false;
                 }
@@ -59,8 +54,7 @@ class Timer {
                 if (!this.fpsStart) {
                     this.fpsStart = new Date();
                     this.fpsIndex = 0;
-                }
-                else {
+                } else {
                     this.fpsIndex++;
                     const fpsCurrent = new Date();
                     if (fpsCurrent - this.fpsStart > 1000) {
@@ -69,8 +63,7 @@ class Timer {
                         this.fpsIndex = 0;
                     }
                 }
-            }
-            else {
+            } else {
                 this.fpsStart = 0;
                 this.fpsIndex = 0;
             }

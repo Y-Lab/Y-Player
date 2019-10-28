@@ -30,6 +30,8 @@ class Controller {
             this.initVolumeButton();
         }
         this.initQualityButton();
+        this.initBackwardButton();
+        this.initForwardButton();
         this.initSpeedButton();
         this.initSpeedDownButton();
         this.initSpeedUpButton();
@@ -48,8 +50,7 @@ class Controller {
             this.player.template.controllerMask.addEventListener('click', () => {
                 this.player.toggle();
             });
-        }
-        else {
+        } else {
             this.player.template.videoWrap.addEventListener('click', () => {
                 this.toggle();
             });
@@ -88,7 +89,7 @@ class Controller {
                 container: this.player.template.barPreview,
                 barWidth: this.player.template.barWrap.offsetWidth,
                 url: this.player.options.video.thumbnails,
-                events: this.player.events
+                events: this.player.events,
             });
 
             this.player.on('loadedmetadata', () => {
@@ -135,7 +136,7 @@ class Controller {
                     this.thumbnails && this.thumbnails.show();
                 }
                 this.thumbnails && this.thumbnails.move(tx);
-                this.player.template.playedBarTime.style.left = `${(tx - (time >= 3600 ? 25 : 20))}px`;
+                this.player.template.playedBarTime.style.left = `${tx - (time >= 3600 ? 25 : 20)}px`;
                 this.player.template.playedBarTime.innerText = utils.secondToTime(time);
                 this.player.template.playedBarTime.classList.remove('hidden');
             }
@@ -193,8 +194,7 @@ class Controller {
                 this.player.video.muted = false;
                 this.player.switchVolumeIcon();
                 this.player.bar.set('volume', this.player.volume(), 'width');
-            }
-            else {
+            } else {
                 this.player.video.muted = true;
                 this.player.template.volumeIcon.innerHTML = Icons.volumeOff;
                 this.player.bar.set('volume', 0, 'width');
@@ -210,6 +210,18 @@ class Controller {
                 }
             });
         }
+    }
+
+    initBackwardButton () {
+        this.player.template.backwardButton.addEventListener('click', () => {
+            this.player.seek(this.player.video.currentTime - 5);
+        });
+    }
+
+    initForwardButton () {
+        this.player.template.forwardButton.addEventListener('click', () => {
+            this.player.seek(this.player.video.currentTime + 5);
+        });
     }
 
     initSpeedButton () {
@@ -275,8 +287,7 @@ class Controller {
     toggle () {
         if (this.isShow()) {
             this.hide();
-        }
-        else {
+        } else {
             this.show();
         }
     }

@@ -15,10 +15,16 @@ export default (options) => {
         volume: 0.5,
         video: {},
         contextmenu: [],
-        mutex: true
+        mutex: true,
+        pluginOptions: {
+            hls: {},
+            flvjs: {},
+            dash: {},
+            webtorrent: {}
+        }
     };
     for (const defaultKey in defaultOption) {
-        if (defaultOption.hasOwnProperty(defaultKey) && !options.hasOwnProperty(defaultKey)) {
+        if (Object.prototype.hasOwnProperty.call(defaultOption, defaultKey) && !Object.prototype.hasOwnProperty.call(options, defaultKey)) {
             options[defaultKey] = defaultOption[defaultKey];
         }
     }

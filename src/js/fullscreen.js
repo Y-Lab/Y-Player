@@ -4,6 +4,7 @@ class FullScreen {
     constructor (player) {
         this.player = player;
 
+        this.lastScrollPosition = { left: 0, top: 0 };
         this.player.events.on('theatermode', () => {
             this.player.resize();
         });
@@ -16,8 +17,7 @@ class FullScreen {
             this.player.resize();
             if (this.isFullScreen('full')) {
                 this.player.events.trigger('fullscreen');
-            }
-            else {
+            } else {
                 utils.setScrollPosition(this.lastScrollPosition);
                 this.player.events.trigger('fullscreen_cancel');
             }
@@ -69,21 +69,16 @@ class FullScreen {
             }
             if (this.player.container.requestFullscreen) {
                 this.player.container.requestFullscreen();
-            }
-            else if (this.player.container.mozRequestFullScreen) {
+            } else if (this.player.container.mozRequestFullScreen) {
                 this.player.container.mozRequestFullScreen();
-            }
-            else if (this.player.container.webkitRequestFullscreen) {
+            } else if (this.player.container.webkitRequestFullscreen) {
                 this.player.container.webkitRequestFullscreen();
-            }
-            else if (this.player.video.webkitEnterFullscreen) {
+            } else if (this.player.video.webkitEnterFullscreen) {
                 // Safari for iOS
                 this.player.video.webkitEnterFullscreen();
-            }
-            else if (this.player.video.webkitEnterFullScreen) {
+            } else if (this.player.video.webkitEnterFullScreen) {
                 this.player.video.webkitEnterFullScreen();
-            }
-            else if (this.player.container.msRequestFullscreen) {
+            } else if (this.player.container.msRequestFullscreen) {
                 this.player.container.msRequestFullscreen();
             }
             break;
@@ -107,20 +102,15 @@ class FullScreen {
             }
             if (document.cancelFullScreen) {
                 document.cancelFullScreen();
-            }
-            else if (document.mozCancelFullScreen) {
+            } else if (document.mozCancelFullScreen) {
                 document.mozCancelFullScreen();
-            }
-            else if (document.webkitCancelFullScreen) {
+            } else if (document.webkitCancelFullScreen) {
                 document.webkitCancelFullScreen();
-            }
-            else if (document.webkitCancelFullscreen) {
+            } else if (document.webkitCancelFullscreen) {
                 document.webkitCancelFullscreen();
-            }
-            else if (document.msCancelFullScreen) {
+            } else if (document.msCancelFullScreen) {
                 document.msCancelFullScreen();
-            }
-            else if (document.msExitFullscreen) {
+            } else if (document.msExitFullscreen) {
                 document.msExitFullscreen();
             }
             break;
@@ -135,8 +125,7 @@ class FullScreen {
     toggle (type = 'full') {
         if (this.isFullScreen(type)) {
             this.cancel(type);
-        }
-        else {
+        } else {
             this.request(type);
         }
     }

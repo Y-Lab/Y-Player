@@ -9,6 +9,10 @@ const utils = {
      * @return {String} 00:00 or 00:00:00
      */
     secondToTime: (second) => {
+        second = second || 0;
+        if (second === 0 || second === Infinity || second.toString() === 'NaN') {
+            return '00:00';
+        }
         const add0 = (num) => num < 10 ? '0' + num : '' + num;
         const hour = Math.floor(second / 3600);
         const min = Math.floor((second - hour * 3600) / 60);
@@ -29,8 +33,7 @@ const utils = {
                 actualLeft += current.offsetLeft;
                 current = current.offsetParent;
             }
-        }
-        else {
+        } else {
             while (current !== null && current !== element) {
                 actualLeft += current.offsetLeft;
                 current = current.offsetParent;
@@ -46,7 +49,7 @@ const utils = {
      * getBoundingClientRect 在 Firefox 11 及以下返回的值会把 transform 的值也包含进去
      * getBoundingClientRect 在 Opera 10.5 及以下返回的值缺失 width、height 值
      */
-    getBoundingClientRectViewLeft (element) {
+    getBoundingClientRectViewLeft: (element) => {
         const scrollTop = window.scrollY || window.pageYOffset || document.body.scrollTop + (document.documentElement && document.documentElement.scrollTop || 0);
 
         if (element.getBoundingClientRect) {
@@ -68,19 +71,16 @@ const utils = {
         }
     },
 
-    getScrollPosition () {
-        return {
-            left: window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft || 0,
-            top: window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
-        };
-    },
+    getScrollPosition: () => ({
+        left: window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft || 0,
+        top: window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
+    }),
 
-    setScrollPosition ({left = 0, top = 0}) {
+    setScrollPosition: ({ left = 0, top = 0 }) => {
         if (this.isFirefox) {
             document.documentElement.scrollLeft = left;
             document.documentElement.scrollTop = top;
-        }
-        else {
+        } else {
             window.scrollTo(left, top);
         }
     },
@@ -100,7 +100,8 @@ const utils = {
     },
 
     cumulativeOffset: (element) => {
-        let top = 0, left = 0;
+        let top = 0;
+        let left = 0;
         do {
             top += element.offsetTop || 0;
             left += element.offsetLeft || 0;

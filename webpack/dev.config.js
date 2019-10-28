@@ -2,6 +2,7 @@
 
 const path = require('path');
 const webpack = require('webpack');
+const autoprefixer = require('autoprefixer');
 
 module.exports = {
     mode: 'development',
@@ -29,7 +30,7 @@ module.exports = {
                 test: /\.js$/,
                 enforce: 'pre',
                 loader: 'eslint-loader',
-                include: path.resolve(__dirname, '../src/js'),
+                include: path.resolve(__dirname, '../src/js')
             },
             {
                 test: /\.js$/,
@@ -39,9 +40,9 @@ module.exports = {
                         options: {
                             cacheDirectory: true,
                             presets: ['@babel/preset-env']
-                        }
-                    }
-                ]
+                        },
+                    },
+                ],
             },
             {
                 test: /\.scss$/,
@@ -56,19 +57,17 @@ module.exports = {
                     {
                         loader: 'postcss-loader',
                         options: {
-                            config: {
-                                path: path.join(__dirname, 'postcss.config.js')
-                            }
-                        }
+                            plugins: [autoprefixer]
+                        },
                     },
                     'sass-loader'
-                ]
+                ],
             },
             {
                 test: /\.(png|jpg)$/,
                 loader: 'url-loader',
                 options: {
-                    'limit': 40000
+                    limit: 40000
                 }
             },
             {
@@ -78,8 +77,8 @@ module.exports = {
             {
                 test: /\.art$/,
                 loader: 'art-template-loader'
-            }
-        ]
+            },
+        ],
     },
     devServer: {
         contentBase: path.resolve(__dirname, '..', 'docs'),

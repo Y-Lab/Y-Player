@@ -3,8 +3,7 @@ function i18n (lang) {
     this.tran = (text) => {
         if (tranTxt[this.lang] && tranTxt[this.lang][text]) {
             return tranTxt[this.lang][text];
-        }
-        else {
+        } else {
             return text;
         }
     };
