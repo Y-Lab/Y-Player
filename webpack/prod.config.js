@@ -2,6 +2,7 @@
 
 const path = require('path');
 const webpack = require('webpack');
+const autoprefixer = require('autoprefixer');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssoWebpackPlugin = require('csso-webpack-plugin').default;
@@ -33,7 +34,7 @@ module.exports = {
                 test: /\.js$/,
                 enforce: 'pre',
                 loader: 'eslint-loader',
-                include: path.resolve(__dirname, '../src/js'),
+                include: path.resolve(__dirname, '../src/js')
             },
             {
                 test: /\.js$/,
@@ -62,19 +63,17 @@ module.exports = {
                     {
                         loader: 'postcss-loader',
                         options: {
-                            config: {
-                                path: path.join(__dirname, 'postcss.config.js')
-                            }
+                            plugins: [autoprefixer]
                         }
                     },
-                    'sass-loader',
+                    'sass-loader'
                 ]
             },
             {
                 test: /\.(png|jpg)$/,
                 loader: 'url-loader',
                 options: {
-                    'limit': 40000
+                    limit: 40000
                 }
             },
             {
@@ -107,6 +106,6 @@ module.exports = {
         dgram: 'empty',
         fs: 'empty',
         net: 'empty',
-        tls: 'empty',
+        tls: 'empty'
     }
 };

@@ -29,8 +29,7 @@ class InfoPanel {
     trigger () {
         if (this.container.classList.contains('y-player-info-panel-hide')) {
             this.show();
-        }
-        else {
+        } else {
             this.hide();
         }
     }

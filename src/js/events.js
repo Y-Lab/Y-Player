@@ -3,20 +3,45 @@ class Events {
         this.events = {};
 
         this.videoEvents = [
-            'abort', 'canplay', 'canplaythrough', 'durationchange', 'emptied', 'ended', 'error',
-            'loadeddata', 'loadedmetadata', 'loadstart', 'mozaudioavailable', 'pause', 'play',
-            'playing', 'progress', 'ratechange', 'seeked', 'seeking', 'stalled', 'suspend',
-            'timeupdate', 'volumechange', 'waiting'
+            'abort',
+            'canplay',
+            'canplaythrough',
+            'durationchange',
+            'emptied',
+            'ended',
+            'error',
+            'loadeddata',
+            'loadedmetadata',
+            'loadstart',
+            'mozaudioavailable',
+            'pause',
+            'play',
+            'playing',
+            'progress',
+            'ratechange',
+            'seeked',
+            'seeking',
+            'stalled',
+            'suspend',
+            'timeupdate',
+            'volumechange',
+            'waiting'
         ];
         this.playerEvents = [
-            'thumbnails_show', 'thumbnails_hide',
-            'contextmenu_show', 'contextmenu_hide',
-            'notice_show', 'notice_hide',
-            'quality_start', 'quality_end',
+            'thumbnails_show',
+            'thumbnails_hide',
+            'contextmenu_show',
+            'contextmenu_hide',
+            'notice_show',
+            'notice_hide',
+            'quality_start',
+            'quality_end',
             'destroy',
             'resize',
-            'theatermode', 'theatermode_cancel',
-            'fullscreen', 'fullscreen_cancel'
+            'theatermode',
+            'theatermode_cancel',
+            'fullscreen',
+            'fullscreen_cancel'
         ];
     }
 
@@ -40,8 +65,7 @@ class Events {
     type (name) {
         if (this.playerEvents.indexOf(name) !== -1) {
             return 'player';
-        }
-        else if (this.videoEvents.indexOf(name) !== -1) {
+        } else if (this.videoEvents.indexOf(name) !== -1) {
             return 'video';
         }
 

@@ -1,67 +1,67 @@
 {
-  "name": "Y-Player",
-  "version": "1.0.3",
-  "description": "Y-English HTML Video Player",
-  "keywords": [
-    "player",
-    "video",
-    "html5",
-    "y-english"
-  ],
-  "homepage": "https://github.com/Y-Lab/Y-Player#readme",
-  "bugs": {
-    "url": "https://github.com/Y-Lab/Y-Player/issues"
-  },
-  "license": "MIT",
-  "author": {
-    "name": "Y-Lab",
-    "email": "dev@y-english.org",
-    "url": "https://lab.y-english.org"
-  },
-  "files": [
-    "dist"
-  ],
-  "main": "dist/player.min.js",
-  "style": "dist/player.min.css",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Y-Lab/Y-Player.git"
-  },
-  "scripts": {
-    "start": "npm run dev",
-    "build": "cross-env NODE_ENV=production webpack --config webpack/prod.config.js --progress --display-error-details --colors",
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --config webpack/dev.config.js --watch --colors",
-    "test": "eslint src webpack"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.6.4",
-    "@babel/preset-env": "^7.6.3",
-    "art-template": "^4.13.0",
-    "art-template-loader": "^1.4.3",
-    "autoprefixer": "^9.7.0",
-    "babel-loader": "^8.0.6",
-    "balloon-css": "^1.0.3",
-    "cross-env": "^6.0.3",
-    "css-loader": "^3.2.0",
-    "csso-webpack-plugin": "^1.0.0-beta.12",
-    "eslint": "^6.6.0",
-    "eslint-loader": "^3.0.2",
-    "exports-loader": "^0.7.0",
-    "file-loader": "^4.2.0",
-    "mini-css-extract-plugin": "^0.8.0",
-    "node-sass": "^4.13.0",
-    "postcss-loader": "^3.0.0",
-    "promise-polyfill": "^8.1.3",
-    "sass-loader": "^8.0.0",
-    "style-loader": "^1.0.0",
-    "svg-inline-loader": "^0.8.0",
-    "template-string-optimize-loader": "^3.0.0",
-    "uglifyjs-webpack-plugin": "^2.2.0",
-    "url-loader": "^2.2.0",
-    "webpack": "^4.41.2",
-    "webpack-cli": "^3.3.9",
-    "webpack-dev-server": "^3.9.0"
-  },
-  "dependencies": {},
-  "private": true
+    "name": "Y-Player",
+    "version": "1.0.3",
+    "description": "Y-English HTML Video Player",
+    "keywords": [
+        "player",
+        "video",
+        "html5",
+        "y-english"
+    ],
+    "homepage": "https://player.y-english.org",
+    "bugs": {
+        "url": "https://github.com/Y-Lab/Y-Player/issues"
+    },
+    "license": "MIT",
+    "author": {
+        "name": "Y-Lab",
+        "email": "dev@y-english.org",
+        "url": "https://lab.y-english.org"
+    },
+    "files": [
+        "dist"
+    ],
+    "main": "dist/player.min.js",
+    "style": "dist/player.min.css",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Y-Lab/Y-Player.git"
+    },
+    "scripts": {
+        "start": "npm run dev",
+        "build": "cross-env NODE_ENV=production webpack --config webpack/prod.config.js --progress --display-error-details --colors",
+        "dev": "cross-env NODE_ENV=development webpack-dev-server --config webpack/dev.config.js --watch --colors",
+        "test": "eslint src webpack"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.6.4",
+        "@babel/preset-env": "^7.6.3",
+        "art-template": "^4.13.0",
+        "art-template-loader": "^1.4.3",
+        "autoprefixer": "^9.7.0",
+        "babel-loader": "^8.0.6",
+        "balloon-css": "^1.0.3",
+        "cross-env": "^6.0.3",
+        "css-loader": "^3.2.0",
+        "csso-webpack-plugin": "^1.0.0-beta.12",
+        "eslint": "^6.6.0",
+        "eslint-loader": "^3.0.2",
+        "exports-loader": "^0.7.0",
+        "file-loader": "^4.2.0",
+        "mini-css-extract-plugin": "^0.8.0",
+        "node-sass": "^4.13.0",
+        "postcss-loader": "^3.0.0",
+        "promise-polyfill": "^8.1.3",
+        "sass-loader": "^8.0.0",
+        "style-loader": "^1.0.0",
+        "svg-inline-loader": "^0.8.0",
+        "template-string-optimize-loader": "^3.0.0",
+        "uglifyjs-webpack-plugin": "^2.2.0",
+        "url-loader": "^2.2.0",
+        "webpack": "^4.41.2",
+        "webpack-cli": "^3.3.9",
+        "webpack-dev-server": "^3.9.0"
+    },
+    "dependencies": {},
+    "private": true
 }

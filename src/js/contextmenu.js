@@ -37,16 +37,14 @@ class ContextMenu {
         if (x + this.player.template.menu.offsetWidth >= clientRect.width) {
             this.player.template.menu.style.right = clientRect.width - x + 'px';
             this.player.template.menu.style.left = 'initial';
-        }
-        else {
+        } else {
             this.player.template.menu.style.left = x + 'px';
             this.player.template.menu.style.right = 'initial';
         }
         if (y + this.player.template.menu.offsetHeight >= clientRect.height) {
             this.player.template.menu.style.bottom = clientRect.height - y + 'px';
             this.player.template.menu.style.top = 'initial';
-        }
-        else {
+        } else {
             this.player.template.menu.style.top = y + 'px';
             this.player.template.menu.style.bottom = 'initial';
         }

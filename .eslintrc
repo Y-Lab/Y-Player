@@ -1,12 +1,14 @@
 {
     "extends": "eslint:recommended",
     "parserOptions": {
-        "ecmaVersion": 6,
+        "ecmaVersion": 2018,
         "sourceType": "module"
     },
     "env": {
-      "browser": true
-    },
+        "es6": true,
+        "browser": true,
+        "node": true,
+        },
     "rules": {
         "no-console": 0,
         "no-extra-parens": 1,
@@ -50,6 +52,11 @@
         "no-useless-rename": 1,
         "rest-spread-spacing": 1,
         "no-trailing-spaces": 1,
+        "no-control-regex": 0,
+        "prettier/prettier": 0,
+        "no-await-in-loop": 1,
+        "require-atomic-updates": 0,
+        "no-prototype-builtins": 0,
         "quotes": [1, "single"]
     },
     "globals": {

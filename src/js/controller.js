@@ -50,8 +50,7 @@ class Controller {
             this.player.template.controllerMask.addEventListener('click', () => {
                 this.player.toggle();
             });
-        }
-        else {
+        } else {
             this.player.template.videoWrap.addEventListener('click', () => {
                 this.toggle();
             });
@@ -90,7 +89,7 @@ class Controller {
                 container: this.player.template.barPreview,
                 barWidth: this.player.template.barWrap.offsetWidth,
                 url: this.player.options.video.thumbnails,
-                events: this.player.events
+                events: this.player.events,
             });
 
             this.player.on('loadedmetadata', () => {
@@ -195,8 +194,7 @@ class Controller {
                 this.player.video.muted = false;
                 this.player.switchVolumeIcon();
                 this.player.bar.set('volume', this.player.volume(), 'width');
-            }
-            else {
+            } else {
                 this.player.video.muted = true;
                 this.player.template.volumeIcon.innerHTML = Icons.volumeOff;
                 this.player.bar.set('volume', 0, 'width');
@@ -289,8 +287,7 @@ class Controller {
     toggle () {
         if (this.isShow()) {
             this.hide();
-        }
-        else {
+        } else {
             this.show();
         }
     }
