@@ -49,7 +49,7 @@ const utils = {
      * getBoundingClientRect 在 Firefox 11 及以下返回的值会把 transform 的值也包含进去
      * getBoundingClientRect 在 Opera 10.5 及以下返回的值缺失 width、height 值
      */
-    getBoundingClientRectViewLeft: (element) => {
+    getBoundingClientRectViewLeft (element) {
         const scrollTop = window.scrollY || window.pageYOffset || document.body.scrollTop + (document.documentElement && document.documentElement.scrollTop || 0);
 
         if (element.getBoundingClientRect) {
@@ -76,7 +76,7 @@ const utils = {
         top: window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
     }),
 
-    setScrollPosition: ({ left = 0, top = 0 }) => {
+    setScrollPosition ({ left = 0, top = 0 }) {
         if (this.isFirefox) {
             document.documentElement.scrollLeft = left;
             document.documentElement.scrollTop = top;
