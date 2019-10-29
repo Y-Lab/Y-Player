@@ -66,20 +66,14 @@ class Player {
 
         this.controller = new Controller(this);
 
-        document.addEventListener(
-            'click',
-            () => {
-                this.focus = false;
-            },
-            true
-        );
-        this.container.addEventListener(
-            'click',
-            () => {
-                this.focus = true;
-            },
-            true
-        );
+        this.plugins = {};
+
+        document.addEventListener('click', () => {
+            this.focus = false;
+        }, true);
+        this.container.addEventListener('click', () => {
+            this.focus = true;
+        },true);
 
         this.paused = true;
 
