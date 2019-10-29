@@ -73,7 +73,7 @@ class Player {
         }, true);
         this.container.addEventListener('click', () => {
             this.focus = true;
-        },true);
+        }, true);
 
         this.paused = true;
 
