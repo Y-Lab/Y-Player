@@ -7,6 +7,7 @@
 
 **FIXED**
 - **Utility** - Misuse of arrow functions in `utils.js` #10
+- **Player** - Cannot find property `plugins` #12
 
 ### Version 1.0.2 - March 30, 2019
 
