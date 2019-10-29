@@ -2,8 +2,11 @@
 
 ### Version 1.0.3 - October 29, 2019
 
-**IMPROVED**
+**NEW**
 - **Controller** - Add seek -5 and +5 seconds buttons #8
+
+**FIXED**
+- **Utility** - Misuse of arrow functions in `utils.js` #10
 
 ### Version 1.0.2 - March 30, 2019
 
