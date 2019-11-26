@@ -1,5 +1,7 @@
 ## RELEASE NOTES
 
+### Version 1.0.4 - November 27, 2019
+
 ### Version 1.0.3 - October 29, 2019
 
 **NEW**
