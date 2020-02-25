@@ -1,6 +1,6 @@
 ## RELEASE NOTES
 
-### Version 1.0.4 - February 7, 2020
+### Version 1.0.4 - February 25, 2020
 
 ### Version 1.0.3 - October 29, 2019
 
