@@ -1,6 +1,19 @@
 ## RELEASE NOTES
 
-### Version 1.0.4 - February 25, 2020
+### Version 1.0.4 - June 17, 2020
+
+**NEW**
+- **Utility** - Add `utils.isSafari` #24
+
+**IMPROVED**
+- **Player** - Update `flv` options #20
+- **Options** - Rename `flvjs` to `flv` #21
+- **Controller** - Adopt `getBoundingClientRect()` instead of `utils.cumulativeOffset(element)` #22
+- **Utility** - Remove `utils.cumulativeOffset(element)` #23
+- **Style** - Update full screen SCSS #25
+
+**FIXED**
+- **Player** - Incorrect element class naming #26
 
 ### Version 1.0.3 - October 29, 2019
 
