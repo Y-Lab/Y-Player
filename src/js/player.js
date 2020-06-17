@@ -279,11 +279,13 @@ class Player {
             case 'flv':
                 if (window.flvjs) {
                     if (window.flvjs.isSupported()) {
-                        const options = Object.assign(this.options.pluginOptions.flvjs, {
-                            type: 'flv',
-                            url: video.src,
-                        });
-                        const flvPlayer = window.flvjs.createPlayer(options);
+                        const flvPlayer = window.flvjs.createPlayer(
+                            Object.assign(this.options.pluginOptions.flv.mediaDataSource || {}, {
+                                type: 'flv',
+                                url: video.src,
+                            }),
+                            this.options.pluginOptions.flv.config
+                        );
                         this.plugins.flvjs = flvPlayer;
                         flvPlayer.attachMediaElement(video);
                         flvPlayer.load();
@@ -321,18 +323,19 @@ class Player {
             case 'webtorrent':
                 if (window.WebTorrent) {
                     if (window.WebTorrent.WEBRTC_SUPPORT) {
-                        this.container.classList.add('dplayer-loading');
+                        this.container.classList.add('y-player-loading');
                         const options = this.options.pluginOptions.webtorrent;
                         const client = new window.WebTorrent(options);
                         this.plugins.webtorrent = client;
                         const torrentId = video.src;
                         video.src = '';
                         video.preload = 'metadata';
-                        video.addEventListener('durationchange', () => this.container.classList.remove('dplayer-loading'), { once: true });
+                        video.addEventListener('durationchange', () => this.container.classList.remove('y-player-loading'), { once: true });
                         client.add(torrentId, (torrent) => {
                             const file = torrent.files.find((file) => file.name.endsWith('.mp4'));
                             file.renderTo(this.video, {
                                 autoplay: this.options.autoplay,
+                                controls: false,
                             });
                         });
                         this.events.on('destroy', () => {

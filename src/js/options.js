@@ -18,7 +18,7 @@ export default (options) => {
         mutex: true,
         pluginOptions: {
             hls: {},
-            flvjs: {},
+            flv: {},
             dash: {},
             webtorrent: {}
         }
